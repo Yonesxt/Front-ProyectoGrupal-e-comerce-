@@ -1,0 +1,94 @@
+.paginado {
+    background-color: #333333;
+    padding: 1.2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.number {
+    
+    display: inline;
+    align-items: center;
+    margin: 0.3rem;
+}
+
+.btn 
+{
+    position: relative;
+    background: #333333;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 16px;
+    transition: 0.5s;
+    border: none;
+}
+
+.btn:hover
+{
+    background: #01F603;
+    color: #01F603;
+    box-shadow: 0 0 35px #01F603;
+}
+
+.btn::before
+{
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: #333333;
+}
+
+.btn .span8
+{
+    position: relative;
+    z-index: 1;
+}
+
+.btn i
+{
+    position: absolute;
+    inset: 0;
+    display: block;
+}
+
+.btn i::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 40px;
+    width: 10px;
+    height: 4px;
+    background: #333333;
+    transform: translateX(-50%) skewX(325deg);
+    transition: 0.5s;
+}
+
+.btn:hover i::before
+{
+    width: 10px;
+    left: 20%;
+}
+
+.btn i::after
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    width: 10px;
+    height: 4px;
+    background: #333333;
+    transform: translateX(-50%) skewX(325deg);
+    transition: 0.5s;
+}
+
+.btn:hover i::after
+{
+    width: 10px;
+    left: 80%;
+}
+.paginadodiv{
+    
+    border-top: 1px solid #26df45;
+}

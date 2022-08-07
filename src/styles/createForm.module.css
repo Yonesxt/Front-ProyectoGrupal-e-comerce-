@@ -1,0 +1,58 @@
+.backg{
+    background-color: rgb(105, 105, 105);
+    
+}
+.wrapper{
+    background-color: #d3d3d38c;
+    margin-right: auto;
+    margin-left:  auto;
+
+    max-width: 960px;
+
+    padding: 20px 40px;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+.titleform{
+    font-family: 'Share Tech', sans-serif;
+    text-align: center;
+    
+}
+.btn{
+border-radius: 0rem;
+border: black;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+cursor: pointer;
+font-family: 'Share Tech', sans-serif;
+font-size: 16px;
+font-weight: 700;
+padding: 15px 60px;
+background-color:black ;
+color:white;
+margin: 20px;
+
+}
+.label1{
+    
+    font-family: 'Share Tech', sans-serif;
+    margin: 20px;
+    padding: 5px;
+}
+.input1{
+    font-family: 'Share Tech', sans-serif;
+}
+.divcell{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+.x{
+    color: red;
+    background-color: rgba(240, 248, 255, 0);
+    border: none;
+}
+.item{
+    display: flex;
+    flex-direction: row;
+}

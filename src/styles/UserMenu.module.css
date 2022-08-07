@@ -1,0 +1,15 @@
+
+.Menu{
+    display: flex;
+    flex-direction: column;
+}
+.img{
+
+    height: 100%;
+    width: 60px;
+}
+.imgDiv{
+    margin-bottom: 10px;
+    margin-left: 20px;
+
+}

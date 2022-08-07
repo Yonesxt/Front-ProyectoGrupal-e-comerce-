@@ -1,0 +1,17 @@
+.swiperContainer {
+    background-color: #333333;
+}
+.title{
+    margin: 80px 20px 10px;
+    font-size: 30px;
+    font-family: 'Share Tech', sans-serif;
+    color: #dcdcdc;
+    /* text-shadow:  1px 1px 10px blueviolet; */
+}
+.sliderbg {
+    width:200px;
+    color: white;
+    background-color: #1e2020d8;
+    margin: 20px 20px 20px 20px;
+    border-radius: 4px;
+}

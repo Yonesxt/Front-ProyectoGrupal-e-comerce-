@@ -1,0 +1,18 @@
+.slider {
+    display: flex;
+    justify-content: center;
+}
+
+.sliderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333333ea;
+}
+
+.sliderContainer img {
+    width: 100vw;
+    height: auto;
+    border-top: 5px solid #01F603;
+    border-bottom: 5px solid #01F603
+}

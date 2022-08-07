@@ -1,0 +1,67 @@
+.container{
+    margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 25px;
+  background-color: #666666;
+  padding: 2rem;
+  box-shadow: 1px 1px 30px rgb(5, 5, 5);
+  border-radius: 0.5rem;
+}
+.CardTop{
+    display: grid;
+    
+    grid-template-columns: 120px 100px 200px 50px ;
+    margin: 0 225px 25px 55px;
+    
+    
+}
+
+.CardTop h2{
+    
+    color: #2ecc36;
+    
+    
+    border-bottom: 1px solid rgba(0, 0, 0, 0.514);
+    font-family: "Share Tech", sans-serif;  
+}
+.Card{   
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    margin: 1rem;
+    border-radius: 0.5rem;
+    color: white;  
+    background-color: #424242;
+    box-shadow: 1px 1px 10px rgb(45, 226, 21);
+    font-family: "Share Tech", sans-serif;
+    
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.CardDate h3{
+    color: #2ecc36;
+}
+
+.Cardinfo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cardbtn{
+    color: #2ecc36;
+    background-color: black;
+    width: 100px;
+    height: 45px;
+    border-radius: 0.5rem;    
+    font-family: "Share Tech", sans-serif;
+    font-size: larger;
+    
+}
+.cardbtn:hover{
+
+   box-shadow: 0 0 15px #2ecc36;
+}
+.info{
+    margin: 1rem;
+}

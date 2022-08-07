@@ -1,0 +1,43 @@
+.loginContainer {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 25vw;
+    margin: 8.5vh 37.5vw;
+    padding: 30px 0;
+    border-radius: 3px;
+    background-color: #01F603;
+    font-family: 'Share Tech', sans-serif;
+}
+.loginContainer h1 {
+    font-size: 1.75rem;
+}
+.loginContainer button {
+    padding: 5px 10px;
+    margin: 15px 0;
+    border-radius: 3px;
+    background-color: #eeeeee;
+}
+.loginContainer img {
+    width: 8rem;
+}
+.form {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem;
+}
+.form input {
+    margin: 10px;
+    width: 15rem;
+    height: 2rem;
+    border-radius: 3px;
+    padding-left: 25px;
+    background-color: #181A1B;
+    color: #ACACAC;
+}
+::placeholder {
+    color: #ACACAC;
+}

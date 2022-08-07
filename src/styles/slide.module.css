@@ -1,0 +1,61 @@
+.container {
+    padding: 0 0 10px;
+    width: 200px;
+    border-radius: 5px;
+}
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.textContainer button{
+    margin: 7px;
+    padding: 7px;
+    border-radius: 4px;
+    background-color: #01f601dc;
+    transition: background-color 0.5s ease;
+}
+.textContainer button:hover {
+    background-color: #00a000dc
+}
+.imgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 170px;
+    background: white;
+    border-radius: 4px 4px 0 0;
+}
+.img{
+    width: 194px;
+    max-height: 170px;
+    border-radius: 4px 4px 0 0;
+    position: absolute;
+    z-index: 3;
+}
+.favourite {
+    margin: 10px;
+    position: absolute;
+    left: 72%;
+    bottom: 81%;
+    z-index: 4;
+}
+.name{
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Share Tech', sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+.price{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Share Tech', sans-serif;
+}
+
+.textContainer {
+    margin: 10px;
+}

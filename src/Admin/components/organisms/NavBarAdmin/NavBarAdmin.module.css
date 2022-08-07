@@ -1,0 +1,19 @@
+.NavContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.NavLink {
+  background-color: #2ecc36;
+  font-family: "Share Tech", sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  width: 100%;
+  height: 50px;
+  border: 1px solid black;
+}
+.NavLink:focus {
+  background-color: black;
+  color: #2ecc36;
+  box-shadow: 1px 1px 20px #2ecc36;
+}
+

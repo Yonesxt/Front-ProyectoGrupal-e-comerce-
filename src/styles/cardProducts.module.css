@@ -1,0 +1,186 @@
+.cardWrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 1rem;
+    font-family: 'Share Tech', sans-serif;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2rem auto;
+    width: 400px;
+    text-align: center;
+    border-radius: 0.5em;
+    background-color: #555555;
+    /* box-shadow: 1px 1px 10px #111; */
+    box-shadow: 1px 1px 15px#01F603;
+    padding: 1em 1.5em;
+}
+
+.card>.price {
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 27px;
+    color: #01F603;
+}
+
+.price h3 {
+    color: rgb(220, 220, 220)
+}
+
+.favButton{
+    position: relative;
+    left: 315px;
+    top: 35px;
+    width: 30px;
+    
+
+    
+}
+
+.card .img {
+    max-height: 15vw;
+    max-width: 20vw;
+    margin: 0 auto;
+}
+
+.card .imgDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vw;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 1px 1px 10px #111;
+    background: white;
+}
+
+
+.card>.btn {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: none;
+    font-size: 20px;
+    padding: .5em;
+    border-radius: .5em;
+    color: #01F603;
+    cursor: pointer;
+    transition: 0.5s;
+    margin-top: 10px;
+}
+
+.card .btn:hover {
+    background-color: rgba(1, 246, 3);
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.card .h2 {
+    /* color: rgba(1, 246, 3, 0.8); */
+    color: white;
+    font-size: 20px;
+}
+
+.loader {
+    color: #01f603;
+    font-size: 90px;
+    text-indent: -9999em;
+    overflow: hidden;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    margin: 72px auto;
+    position: relative;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+    animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+}
+
+@-webkit-keyframes load6 {
+    0% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+
+    5%,
+    95% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+
+    10%,
+    59% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+    }
+
+    20% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+    }
+
+    38% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+    }
+
+    100% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+}
+
+@keyframes load6 {
+    0% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+
+    5%,
+    95% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+
+    10%,
+    59% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.087em -0.825em 0 -0.42em, -0.173em -0.812em 0 -0.44em, -0.256em -0.789em 0 -0.46em, -0.297em -0.775em 0 -0.477em;
+    }
+
+    20% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.338em -0.758em 0 -0.42em, -0.555em -0.617em 0 -0.44em, -0.671em -0.488em 0 -0.46em, -0.749em -0.34em 0 -0.477em;
+    }
+
+    38% {
+        box-shadow: 0 -0.83em 0 -0.4em, -0.377em -0.74em 0 -0.42em, -0.645em -0.522em 0 -0.44em, -0.775em -0.297em 0 -0.46em, -0.82em -0.09em 0 -0.477em;
+    }
+
+    100% {
+        box-shadow: 0 -0.83em 0 -0.4em, 0 -0.83em 0 -0.42em, 0 -0.83em 0 -0.44em, 0 -0.83em 0 -0.46em, 0 -0.83em 0 -0.477em;
+    }
+}
+
+@-webkit-keyframes round {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes round {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}

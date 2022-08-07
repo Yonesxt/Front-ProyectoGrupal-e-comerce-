@@ -1,0 +1,72 @@
+.div {
+    background-color: #17771777;
+    margin: 10 px;
+    display: flex;    
+}
+
+.textarea{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;    
+}
+
+.btnSend {
+    padding: 4px;
+    background-color: #01f60470;
+    margin-top: 10px;
+    margin-right: 17px;
+    border-radius: 4px;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.btnSEnd:hover {
+    color: #000;
+    background-color: #ffffff90;
+    letter-spacing: 1px;
+}
+
+.allComments{
+    display: flex;
+    justify-content: flex-start;
+    border: 1px solid #ffffffa6;
+    border-radius: 5px;
+    background-color: #383838;
+    padding: 2px;
+    width: max-content;
+    height: auto;
+}
+
+.btnTrash1{
+    margin: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+.btnTrash1:hover{
+    transform: scale(1.2);
+    border: 1px solid #ff06067c ;
+    border-radius: 5px;
+}
+
+.trash1{
+    height: 25px;
+}
+
+.titleUser{
+    color: #01F603 ,
+}
+
+.text{
+    color: #ffffff ,
+}
+
+.btnDelete{
+  margin-top: 20px;
+  margin-right: 25px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 0.5rem;
+  height: 50px;
+  width: 100px;
+  font-family: "Share Tech", sans-serif;  
+  color: #2ecc36;
+}

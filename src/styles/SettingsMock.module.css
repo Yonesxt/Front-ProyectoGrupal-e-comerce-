@@ -1,0 +1,30 @@
+
+.wrapper{
+    margin: 0rem 12rem;
+    background-color:  #c5c5c5;
+    padding: 4rem;
+    color: black;
+    
+
+}
+.title{
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Share Tech', sans-serif;
+    font-weight: 500;
+}
+.contimg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img{   
+
+    height: 150px;
+    width: 150px;
+    border-radius: 100px;
+}
+.info{
+ margin: 12rem;
+ font-family: 'Share Tech', sans-serif;
+}

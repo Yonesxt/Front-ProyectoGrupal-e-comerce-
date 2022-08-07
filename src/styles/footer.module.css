@@ -1,0 +1,33 @@
+.footerContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-family: 'Share Tech', sans-serif;
+    background-color: #333333;
+    padding: 30px;
+}
+.title {
+    font-size: 20px;
+    color: #4AA5FA;
+}
+.subCategories {
+    font-size: 20px;
+    color: white;
+}
+.after {
+    position: fixed;
+    top: 84%;
+    right: 1%;
+    z-index: 9;
+    width: 100px;
+
+    display: flex;
+    justify-content: flex-end;
+    background-color: #33333300;
+    height: 70px;
+    object-fit: contain;
+    
+}
+.after img {    
+    padding: 5px;
+}

@@ -1,0 +1,76 @@
+.options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color:#efefef;
+}
+.options span {
+    font-size: 1.2rem;
+    margin: 10px;
+    font-family: 'Share Tech', sans-serif;
+}
+.options span:hover {
+    color: #01F603;
+}
+.options img {
+    height: 24px !important;
+    width: auto !important;
+}
+.link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.onPath {
+    color: #01F603;
+}
+.menudiv{
+    display: flex;  
+    height: 4rem;
+    width: 24rem;  
+    font-size: 24px;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Share Tech', sans-serif;
+}
+.menudiv:hover{
+        
+    background-color: aliceblue;
+    transform: scale(1.1) ;
+    animation-duration: 1s;
+}
+.modal{
+    background-color: black;
+}
+
+.linkWrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cartItems {
+    position: absolute;
+    right: -4px;
+    font-size: 12px !important;
+    font-weight: 800;
+    bottom: -8px;
+    background-color: white;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    color: #000;
+    margin: 0 !important;
+    display: block;
+    text-align: center;
+}
+
+
+
+
+
+

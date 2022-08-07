@@ -1,0 +1,54 @@
+.Cardcontainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2rem auto;
+    width: 400px;
+    text-align: center;
+    border-radius: 0.5em;
+    background-color: #555555;
+    /* box-shadow: 1px 1px 10px #111; */
+    box-shadow: 1px 1px 15px#01F603;
+    padding: 1em 1.5em;
+
+}
+.img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vw;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 1px 1px 10px #111;
+    background: white;
+
+}
+.name{
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Share Tech', sans-serif;
+}
+.price{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Share Tech', sans-serif;
+}
+.star{
+    color: rgb(218, 200, 42); 
+    position: absolute;
+    font-size: 30px;
+    margin: 8px;
+
+}
+.star:hover{
+    color: rgb(218, 111, 78); 
+
+}
+.favButton{
+position: relative;
+    left: 315px;
+    top: 35px;
+    width: 30px;
+}
