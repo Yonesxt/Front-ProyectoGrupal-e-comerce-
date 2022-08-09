@@ -23,19 +23,26 @@ export default function UserProfile () {
     }
     
     function handleSubmit (e) {
-        
-        swal({
-            title: "Tu Perfil fue actualizado con exito",
-            input: "text",
+        e.preventDefault()
+        dispatch(changeProfile(userLoged.id, user))
+
+        swal.fire({
+            title: 'Do you want to save the changes?',
+            showDenyButton: true,
             showCancelButton: true,
-            confirmButtonText: "Guardar",
-            cancelButtonText: "Cancelar",
-            buttons: {
-                cancel: 'ok'
+            confirmButtonText: 'Save',
+            denyButtonText: `Don't save`,
+          }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+              swal.fire('Saved!', '', 'success')
+              
+              window.location.reload()
+            } else if (result.isDenied) {
+              swal.fire('Changes are not saved', '', 'info')
             }
-        }).then(()=>{
-                dispatch(changeProfile(userLoged.id, user))
-            })
+          })
+
     }
 
     useEffect(() => {
