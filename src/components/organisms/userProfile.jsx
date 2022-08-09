@@ -31,10 +31,14 @@ export default function UserProfile () {
             title: 'Los cambios fueron guardados',
             confirmButtonText: 'Save',
           }).then((result) => {
-                Swal.fire('Saved!', '', 'success')
+                Swal.fire({
+                 icon: 'success', 
+                 showConfirmButton: false,
+                 timer: 1500
+            }).then((result) => {
                 setTimeout(() => {
                     window.location.reload()
-                }, 1000);
+                }, 1000);})
           })
 
     }
