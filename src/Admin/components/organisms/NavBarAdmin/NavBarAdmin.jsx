@@ -1,9 +1,14 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import style from "./NavBarAdmin.module.css";
+import { useSelector } from 'react-redux';
 
 
 function NavBarAdmin(){
+  const userLoged = useSelector((state) => state.userLoged)
+  const nav = useNavigate()
+  if(!userLoged.isAdmin) nav("/"); 
+
   return (
     <>
       <nav className={style.NavContainer}>

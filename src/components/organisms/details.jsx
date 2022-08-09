@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getDetail, cleaner } from "../../redux/actions";
@@ -18,12 +18,13 @@ export default function Details() {
   const { id } = useParams();
   const product = useSelector((state) => state.detail);
 
+
   const { image, name, price, brand, description, stock, rating } = product
 
   useEffect(() => {
     dispatch(getDetail(id));
     return () => dispatch(cleaner())
-  }, [id]) //eslint-disable-line react-hooks/exhaustive-deps
+  }, [dispatch, id]) //eslint-disable-line react-hooks/exhaustive-deps
 
   const handleItemToCart = (product) => () => addItemToCart(product)
 
@@ -57,7 +58,7 @@ export default function Details() {
               </div>
             )}
         </div>
-        <Comments/>
+        <Comments />
       </div>
     </div>
   );

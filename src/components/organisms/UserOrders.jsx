@@ -114,7 +114,7 @@ const UserOrders = () => {
 
   return (
     <div className={style.container}>
-      <h2 className={style.Title}> My Orders</h2>
+      <h2 className={style.Title}> Mis ordenes</h2>
 
 
 
@@ -135,7 +135,7 @@ const UserOrders = () => {
                       <div className={style.productDivinfo}>
                         <div >
                           <h3>{item.name}</h3>
-                          <h3>{item.brand}</h3>
+                          <h3 className={style.productDivinfobrand}>{item.brand}</h3>
                         </div>
                         <div>
                           <h3>$ {item.price}</h3>

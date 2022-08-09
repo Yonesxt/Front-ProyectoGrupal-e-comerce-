@@ -9,7 +9,7 @@
 }
 .Card{
     display: grid;
-    grid-template-columns: 110px 50px 200px 75px 600px;
+    grid-template-columns: 110px 50px 230px 100px 500px;
     grid-auto-rows: auto;
     margin: 1rem;
     border-radius: 0.5rem;
@@ -43,7 +43,7 @@
 .CardTop{
     display: grid;
     color: #2ecc36;
-    grid-template-columns: 85px 145px 140px 100px ;
+    grid-template-columns: 85px 180px 200px 100px ;
     margin: 0 225px 25px 130px;
     font-family: "Share Tech", sans-serif; 
 

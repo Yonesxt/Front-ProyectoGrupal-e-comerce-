@@ -42,6 +42,7 @@
     background-color: rgba(1, 246, 1, 0.63);
     padding: 1rem;
     margin: 2rem;
+    border-radius: 8px;
 }
 
 .brand {

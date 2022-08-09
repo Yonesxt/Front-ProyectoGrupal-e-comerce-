@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect, useContext } from "react";
 import swal from 'sweetalert';
+import swal2 from 'sweetalert2';
 import { useSelector } from 'react-redux'
 
 const CartContext = createContext();
@@ -47,15 +48,12 @@ export const CartProvider = ({ children }) => {
             newItems = cartItems.map((productInCart) => {
                 if (productInCart.id === itemToAdd.id) {
                     if(inCart.amount === inCart.stock){
-                        swal({
-                            title: "No hay suficientes productos en el stock",
-                            input: "text",
-                            showCancelButton: true,
-                            confirmButtonText: "Guardar",
-                            cancelButtonText: "Cancelar",
-                            buttons: {
-                                cancel: 'ok'
-                            }
+                        swal2.fire({
+                            position: 'center',
+                            icon: 'warning',
+                            title: 'No hay suficientes productos en el stock',
+                            showConfirmButton: false,
+                            timer: 1500
                         })
                         return productInCart;
                     }else {
@@ -66,15 +64,12 @@ export const CartProvider = ({ children }) => {
 
         } else {
             newItems = [...cartItems, { ...itemToAdd, amount: 1 }]
-            swal({
-                title: "Producto añadido al carrito",
-                input: "text",
-                showCancelButton: true,
-                confirmButtonText: "Guardar",
-                cancelButtonText: "Cancelar",
-                buttons: {
-                    cancel: 'ok'
-                }
+            swal2.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Producto agregado a tu carrito',
+                showConfirmButton: false,
+                timer: 1500
             })
         }
 
@@ -94,15 +89,12 @@ export const CartProvider = ({ children }) => {
             itemDelete = cartItems.filter(({ id }) => id !== itemToDelete.id)
         }
 
-        swal({
-            title: "Producto eliminado del carrito",
-            input: "text",
-            showCancelButton: true,
-            confirmButtonText: "Guardar",
-            cancelButtonText: "Cancelar",
-            buttons: {
-                cancel: 'ok'
-            }
+        swal2.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Producto eliminado de tu carrito',
+            showConfirmButton: false,
+            timer: 1500
         })
 
         updateState({ products: itemDelete });
@@ -119,15 +111,12 @@ export const CartProvider = ({ children }) => {
 
             itemDelete = cartItems.filter(({ id }) => id !== itemToDelete.id)
             
-            swal({
-                title: "Producto eliminado del carrito",
-                input: "text",
-                showCancelButton: true,
-                confirmButtonText: "Guardar",
-                cancelButtonText: "Cancelar",
-                buttons: {
-                    cancel: 'ok'
-                }
+            swal2.fire({
+                position: 'center',
+                icon: 'error',
+                title: 'Producto eliminado de tu carrito',
+                showConfirmButton: false,
+                timer: 1500
             })
 
             updateState({ products: itemDelete });

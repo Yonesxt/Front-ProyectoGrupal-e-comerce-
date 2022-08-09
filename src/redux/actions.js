@@ -37,14 +37,17 @@ export const POST_ORDERS = 'POST_ORDERS'
 export const GET_ALL_USERS_ORDER = 'GET_ALL_USERS_ORDER'
 export const NUMBER_PAGE = 'NUMBER_PAGE'
 export const GET_ORDER_BY_ID = 'GET_ORDER_BY_ID'
+export const GET_ALL_COMMENTS = 'GET_ALL_COMMENTS'
+export const DELETE_FAVORITE = 'DELETE_FAVORITE'
+export const GET_USER_FAVORITES = 'GET_USER_FAVORITES'
 
 
 
 export function getProducts(loc) {
     return async function (dispatch) {
         let json = '';
-        loc ? json = await axios(`https://calm-dusk-93190.herokuapp.com/api/products?name=${loc}`) :
-            json = await axios('https://calm-dusk-93190.herokuapp.com/api/products');
+        loc ? json = await axios(`http://localhost:3001/api/products?name=${loc}`) :
+            json = await axios('http://localhost:3001/api/products');
         const data = await json.data;
         return dispatch({
             type: GET_PRODUCTS,
@@ -55,7 +58,7 @@ export function getProducts(loc) {
 
 export function getProductByName(name) {
     return async function (dispatch) {
-        const json = await axios(`https://calm-dusk-93190.herokuapp.com/api/products?name=${name}`)
+        const json = await axios(`http://localhost:3001/api/products?name=${name}`)
         const data = json.data
         return dispatch({
             type: GET_PRODUCT_BY_NAME,
@@ -65,7 +68,7 @@ export function getProductByName(name) {
 }
 export function getOrderById(id) {
     return async function (dispatch) {
-        const json = await axios(`https://calm-dusk-93190.herokuapp.com/api/orders/${id}`)
+        const json = await axios(`http://localhost:3001/api/orders/${id}`)
         const data = json.data
         return dispatch({
             type: GET_ORDER_BY_ID,
@@ -76,7 +79,7 @@ export function getOrderById(id) {
 
 export function getDetail(id) {
     return async function (dispatch) {
-        const json = await axios(`https://calm-dusk-93190.herokuapp.com/api/product/${id}`)
+        const json = await axios(`http://localhost:3001/api/product/${id}`)
         const data = json.data
         return dispatch({
             type: GET_DETAIL,
@@ -86,7 +89,7 @@ export function getDetail(id) {
 }
 export function getUsers() {
     return async function (dispatch) {
-        const json = await axios(`https://calm-dusk-93190.herokuapp.com/api/users/`)
+        const json = await axios(`http://localhost:3001/api/users/`)
         const data = json.data
         return dispatch({
             type: GET_ALL_USERS,
@@ -96,7 +99,7 @@ export function getUsers() {
 }
 export function getUserByEmail(email) {
     return async function (dispatch) {
-        const json = await axios(`https://calm-dusk-93190.herokuapp.com/api/user/${email}`)
+        const json = await axios(`http://localhost:3001/api/user/${email}`)
         const data = json.data
         return dispatch({
             type: GET_USER_BY_EMAIL,
@@ -106,7 +109,7 @@ export function getUserByEmail(email) {
 }
 export function getAllByidUser(id) {
     return async function (dispatch) {
-        const json = await axios(`https://calm-dusk-93190.herokuapp.com/api/orders/` , {id})
+        const json = await axios(`http://localhost:3001/api/orders/` , {id})
         const data = json.data
         return dispatch({
             type: GET_ALL_USERS_ORDER,
@@ -117,7 +120,7 @@ export function getAllByidUser(id) {
 
 export function getFilterBrand() {
     return async function (dispatch) {
-        const json = await axios(`https://calm-dusk-93190.herokuapp.com/api/products/brand/all`)
+        const json = await axios(`http://localhost:3001/api/products/brand/all`)
         const data = json.data
         return dispatch({
             type: GET_FILTER_BRAND,
@@ -129,7 +132,7 @@ export function getFilterBrand() {
 export function getFilters(category) {
     return async function (dispatch) {
         try {
-            const { data } = await axios.post('https://calm-dusk-93190.herokuapp.com/api/products/filter', (category))
+            const { data } = await axios.post('http://localhost:3001/api/products/filter', (category))
             return dispatch({ type: GET_FILTERS, payload: data })
         }
         catch (error) {
@@ -149,7 +152,7 @@ export function getFilters(category) {
 
 export function banUser(body) {
     return async function (dispatch) {
-        const { data } = await axios.get('https://calm-dusk-93190.herokuapp.com/api/admin/ban', (body))
+        const { data } = await axios.get('http://localhost:3001/api/admin/ban', (body))
         return dispatch({
             type: BAN_USER,
             payload: data
@@ -158,7 +161,7 @@ export function banUser(body) {
 }
 export function updateProduct(id, update) {
     return async function (dispatch) {
-        const { data } = await axios.put('https://calm-dusk-93190.herokuapp.com/api/products/', ({id, update}))
+        const { data } = await axios.put('http://localhost:3001/api/products/', ({id, update}))
         return dispatch({
             type: UPDATE_PRODUCT,
             payload: data
@@ -167,7 +170,7 @@ export function updateProduct(id, update) {
 }
 export function changeRole(id) {
     return async function (dispatch) {
-        const { data } = await axios.put('https://calm-dusk-93190.herokuapp.com/api/users/role/' , (id) )
+        const { data } = await axios.put('http://localhost:3001/api/users/role/' , (id) )
         return dispatch({
             type: UPDATE_ROL,
             payload: data
@@ -176,7 +179,7 @@ export function changeRole(id) {
 }
 export function updateStock(id, stock) {
     return async function (dispatch) {
-        const { data } = await axios.put('https://calm-dusk-93190.herokuapp.com/api/products/stock', ({id, stock}))
+        const { data } = await axios.put('http://localhost:3001/api/products/stock', ({id, stock}))
         return dispatch({
             type: UPDATE_STOCK,
             payload: data
@@ -185,7 +188,7 @@ export function updateStock(id, stock) {
 }
 export function deleteProduct(id) {
     return async function (dispatch) {
-        const { data } = await axios.put('https://calm-dusk-93190.herokuapp.com/api/product/'  + id )
+        const { data } = await axios.put('http://localhost:3001/api/product/'  + id )
         return dispatch({
             type: DELETE_PRODUCT,
             payload: data
@@ -194,7 +197,7 @@ export function deleteProduct(id) {
 }
 export function upgradeToAdmin(body) {
     return async function (dispatch) {
-        const { data } = await axios.get('https://calm-dusk-93190.herokuapp.com/api/admin/upgrade', (body))
+        const { data } = await axios.get('http://localhost:3001/api/admin/upgrade', (body))
         return dispatch({
             type: UPGRADE_USER,
             payload: data
@@ -204,7 +207,7 @@ export function upgradeToAdmin(body) {
 
 export function getCate() {
     return async function (dispatch) {
-        const json = await axios('https://calm-dusk-93190.herokuapp.com/api/categories')
+        const json = await axios('http://localhost:3001/api/categories')
         const data = json.data
         return dispatch({
             type: GET_CATE,
@@ -215,7 +218,7 @@ export function getCate() {
 
 export function getAllCategories() {
     return async function (dispatch) {
-        const json = await axios(`https://calm-dusk-93190.herokuapp.com/api/categories`)
+        const json = await axios(`http://localhost:3001/api/categories`)
         const data = json.data
         return dispatch({
             type: GET_ALL_CATEGORIES,
@@ -260,17 +263,10 @@ export function getMsgCart(payload) {
 }
 ///////////////////////////////////   POSTS     ///////////////////////////////////////////
 
-
-
-// export async function postProfile (u) {
-//         const { data } = await axios.post(`https://calm-dusk-93190.herokuapp.com/api/users/`, u)
-//         return data
-// }
-
 export function token(tok, user) { 
     return async function (dispatch) {
         
-        const { data } = await axios.post('https://calm-dusk-93190.herokuapp.com/api/profile',user,
+        const { data } = await axios.post('http://localhost:3001/api/profile',user,
             {
                 headers: {
                     'Authorization': `Bearer ${tok}`
@@ -283,14 +279,14 @@ export function token(tok, user) {
 
 export function crateComment(comment) {
     return async function (dispatch) {
-        const { data } = await axios.post('https://calm-dusk-93190.herokuapp.com/api/commentary', (comment))
+        const { data } = await axios.post('http://localhost:3001/api/commentary', (comment))
         return dispatch({ type: CREATE_COMMENT, payload: data })
     }
 }
 
 export function getComments(id) {
     return async function (dispatch) {
-        const json = await axios(`https://calm-dusk-93190.herokuapp.com/api/commentary?productId=${id}`)
+        const json = await axios(`http://localhost:3001/api/commentary?productId=${id}`)
         const data = json.data
         return dispatch({
             type: GET_COMMENTS_ID,
@@ -300,7 +296,7 @@ export function getComments(id) {
 }
 export function getAllOrder() {
     return async function (dispatch) {
-        const json = await axios(`https://calm-dusk-93190.herokuapp.com/api/orders`)
+        const json = await axios(`http://localhost:3001/api/orders`)
         const data = json.data
         return dispatch({
             type: GET_ALL_ORDERS,
@@ -308,17 +304,38 @@ export function getAllOrder() {
         })
     }
 }
+export function GetAllReviews() {
+    return async function (dispatch) {
+        const json = await axios(`http://localhost:3001/api/commentary/all`)
+        const data = json.data
+        return dispatch({
+            type: GET_ALL_COMMENTS,
+            payload: data
+        })
+    }
+}
+export function getUsersFavorite(id) {
+    return async function (dispatch) {
+        const json = await axios(`http://localhost:3001/api/favorite/${id}`)
+        const data = json.data
+        console.log(data)
+        return dispatch({
+            type: GET_USER_FAVORITES,
+            payload: data
+        })
+    }
+}
 
 export function editComment(comment) {
     return async function (dispatch) {
-        const { data } = await axios.put('https://calm-dusk-93190.herokuapp.com/api/commentary', comment)
+        const { data } = await axios.put('http://localhost:3001/api/commentary', comment)
         return dispatch({ type: EDIT_COMMENT, payload: data })
     }
 }
 
 export function deleteComment(id) {
     return async function (dispatch) {
-        const { data } = await axios.delete(`https://calm-dusk-93190.herokuapp.com/api/commentary?id=${id}`)
+        const { data } = await axios.delete(`http://localhost:3001/api/commentary?id=${id}`)
         return dispatch({ type: DELETE_COMMENT, payload: data })
     }
 }
@@ -327,7 +344,7 @@ export function deleteComment(id) {
 
 export function createProduct(payload) {
     return async function (dispatch) {
-        const json = await axios.post(`https://calm-dusk-93190.herokuapp.com/api/products/`, payload)
+        const json = await axios.post(`http://localhost:3001/api/products/`, payload)
         const data = await json.data
         return dispatch({
             type: CREATE_PRODUCT,
@@ -339,10 +356,21 @@ export function createProduct(payload) {
 export function favoritePost(idProducts,idUser) {
     return async function (dispatch) {
         console.log(idProducts,idUser)
-        const json = await axios.post(`https://calm-dusk-93190.herokuapp.com/api/favorite`, idProducts,idUser)
+        const json = await axios.post(`http://localhost:3001/api/favorite`, {idProducts,idUser})
         const data = await json.data
         return dispatch({
             type: POST_FAVORITE,
+            payload: data
+        })
+    }
+}
+export function deleteFavorite(idProducts,idUser) {
+    return async function (dispatch) {
+        console.log(idProducts,idUser)
+        const json = await axios.delete(`http://localhost:3001/api/favorite`, { data: { idProducts,idUser } })
+        const data = await json.data
+        return dispatch({
+            type: DELETE_FAVORITE,
             payload: data
         })
     }
@@ -351,7 +379,7 @@ export function favoritePost(idProducts,idUser) {
 export function postOrder(id, products, shipmentAddress, postalCode) {
     return async function (dispatch) {
         // console.log(products,idUser)
-        const {data} = await axios.post(`https://calm-dusk-93190.herokuapp.com/api/orders`,{UserId: id, products, shipmentAddress, postalCode})
+        const {data} = await axios.post(`http://localhost:3001/api/orders`,{UserId: id, products, shipmentAddress, postalCode})
         return dispatch({
             type: POST_ORDERS,
             payload: data
@@ -363,7 +391,7 @@ export function postOrder(id, products, shipmentAddress, postalCode) {
 
 export function changeProfile(id, user) {
     return async function (dispatch) {
-        const { data } = await axios.put(`https://calm-dusk-93190.herokuapp.com/api/users/edit/${id}`, user);
+        const { data } = await axios.put(`http://localhost:3001/api/users/edit/${id}`, user);
         console.log('aqui en action para el put',user)
         // return dispatch({
         //     type: TOKEN,

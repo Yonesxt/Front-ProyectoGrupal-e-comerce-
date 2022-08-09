@@ -1,6 +1,6 @@
 .searchbarGeneralContainer {
     position: absolute;
-    top: 2.5vw;
+    top: 38px;
     left: 150px;
     max-height: 200px;
     width: 289px;
@@ -27,6 +27,7 @@
     align-items: center;
     justify-content: center;
     background-color: #01F603;
+    color: rgb(212, 0, 255);
     border-radius: 3px;
 }
 .searchbarContainer img {
@@ -58,4 +59,16 @@
 }
 .productsBox li:hover {
     background: #131313df
+}
+
+@media only screen and (max-width: 650px) {
+    .searchbarGeneralContainer {
+        left: 5%;
+        right: 20px;
+    }
+}
+@media only screen and (max-width: 440px) {
+    .searchbarGeneralContainer {
+        display: none;
+    }
 }

@@ -42,7 +42,6 @@ function OrdersAdmin(){
                         <h3 className={style.info}>{e.address}</h3>                
                         </div>
                         <div className={style.CardinfoProd}>
-                        <h3 className={style.info}>{e.Products?.map((e)=> {return e.Products_Orders.quantity}).reduce((previousValue, currentValue) => previousValue + currentValue)} products</h3> 
                         <h3 className={style.info}> $ {e.amount}</h3>               
                         <h3 className={style.info}>{e.paymentMethod}</h3>                
                         </div>
@@ -65,3 +64,4 @@ function OrdersAdmin(){
 
 
 export default OrdersAdmin;
+//<h3 className={style.info}>{e.Products?.map((e)=> {return e.Products_Orders.quantity}).reduce((previousValue, currentValue) => previousValue + currentValue)} products</h3> 

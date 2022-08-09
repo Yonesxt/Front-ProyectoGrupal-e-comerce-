@@ -111,7 +111,7 @@ const TestAddresForm = () => {
 
                         <div className={style.inputBox}>
                             <span className={style.span}>Direccion :</span>
-                            <input type="text" key='address' placeholder="calle#" className={style.input} defaultValue={user.address || address} name='address' onChange={(e) => handleChange(e)} />
+                            <input type="text" key='address' placeholder="Es necesaria una direccion" className={style.input} defaultValue={user.address || address} name='address' onChange={(e) => handleChange(e)} />
                         </div>
 
                         <div className={style.inputBox}>
@@ -127,7 +127,7 @@ const TestAddresForm = () => {
 
                             <div className={style.inputBox}>
                                 <span className={style.span}>Codigo postal :</span>
-                                <input type="text" key='postalCode' placeholder="123 456" className={style.input} defaultValue={user.postalCode || postalCode} name='postalCode' onChange={(e) => handleChange(e)} />
+                                <input type="text" key='postalCode' placeholder="Codigo postal" className={style.input} defaultValue={user.postalCode || postalCode} name='postalCode' onChange={(e) => handleChange(e)} />
                             </div>
                         </div>
                     </div>

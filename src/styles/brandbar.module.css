@@ -1,7 +1,7 @@
 .main{   
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    margin: 60px 0 60px;
+    grid-template-columns: repeat(4, 22vw);
+    margin: 8vh 0 8vh;
     justify-items: center;
     align-items: center;
     align-self: center;
@@ -15,13 +15,16 @@
     
 }
 .item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 1rem;
     box-shadow: 0 0 10px 0 black; 
     background-color: #423e3e;    
     align-self: center;
-    width: 12rem;
-    height: auto;
-    padding: 2rem;
+    width: 12vw;
+    height: 11vw;
+    padding: 2vw;
     border-radius: 5px;
     transition: 0.5s;
 }
@@ -33,8 +36,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 80px 0 10px;
-    font-size: 30px;
+    margin-top: 9vh;
+    font-size: 2.5rem;
     font-family: 'Share Tech', sans-serif;
     color: #dcdcdc;
+}
+
+@media only screen and (max-width: 800px) {
+    .item {
+        width: 18vw;
+        height: 14vw;
+    }
 }

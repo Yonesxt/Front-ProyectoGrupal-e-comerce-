@@ -6,7 +6,7 @@ import martin from '../../assets/martin.jpg';
 import fran from '../../assets/fran.jpg';
 import gaston from '../../assets/gaston.jpg';
 import cesar from '../../assets/cesar.jpg';
-import rodrigo from '../../assets/rodrigo.jpg';
+import rodrigo from '../../assets/rodrigoz.jpg';
 import style from '../../styles/aboutUs.module.css'
 
 export default function AboutUs() {

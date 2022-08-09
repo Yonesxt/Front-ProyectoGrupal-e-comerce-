@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-//import { getAllReviews, deleteReview } from  "../../../../redux/actions"
-import { NavLink } from "react-router-dom";
+import { GetAllReviews, deleteComment } from  "../../../../redux/actions"
 import style from "./ReviewsAdmin.module.css";
 import { ImCross } from "react-icons/im"
 import swal from 'sweetalert'
@@ -11,24 +10,11 @@ function ReviewsAdmin(){
   const dispatch = useDispatch()
   
   useEffect(() => {
-//    dispatch(getAllReviews());
+   dispatch(GetAllReviews());
   }, []);
   
-//  const allreviews = useSelector((state)=> state.allreviews)
-const allreviews = [
-    {
-    id: 1,
-    email: "nico@gmail.com",
-    rating: 5,
-    text: "Buenisimo el producto"
-},
-{
-    id: 2,
-    email: "juan@gmail.com",
-    rating: 3,
-    text: "buen producto"
-}
-]
+ const allreviews = useSelector((state)=> state.allComments)
+
 
   function deleteHandler(e){
     console.log(e.id)
@@ -41,7 +27,7 @@ const allreviews = [
     })
     .then((willDelete) => {
       if (willDelete) {
-//        dispatch(deleteReview(e.id))
+        dispatch(deleteComment(e.id))
         swal("the review has been deleted!", {
           icon: "success",
         });
@@ -81,7 +67,7 @@ const allreviews = [
                           className={style.DelBtnr}/>
                         </button> 
                         <h3 className={style.info}>{e.id}</h3>                
-                        <h3 className={style.info}>{e.email}</h3>                
+                        <h3 className={style.info}>{e.User.email}</h3>                
                         <h3 className={style.info}>{e.rating}</h3>                
                         <h3 className={style.info}>{e.text}</h3>                
                                         

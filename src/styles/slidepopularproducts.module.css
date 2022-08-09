@@ -1,12 +1,15 @@
+.slideContainer {
+    width: 100vw;
+}
 .swiperContainer {
     background-color: #333333;
+    width: 100vw;
 }
-.title{
+.title {
     margin: 80px 20px 10px;
     font-size: 30px;
     font-family: 'Share Tech', sans-serif;
     color: #dcdcdc;
-    /* text-shadow:  1px 1px 10px blueviolet; */
 }
 .sliderbg {
     width:200px;
@@ -14,4 +17,10 @@
     background-color: #1e2020d8;
     margin: 20px 20px 20px 20px;
     border-radius: 4px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .sliderbg {
+        width: 18vw !important
+    }
 }

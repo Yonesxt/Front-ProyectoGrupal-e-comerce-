@@ -17,10 +17,11 @@ const UserMenu = (props) => {
     <div className={style.Menu}>
 
       <Menu isLazy>
-        <MenuButton as={Button}
-          bg="none" color="white" fontFamily="Share Tech, sans-serif" fontSize="1.2rem" _hover={{
+        <MenuButton as={Button} className={style.menuButton}
+          bg="none" color="white" fontSize="1rem"
+           _hover={{
             background: "none",
-            color: "green",
+            color: "brand.green",
           }} _active={{
             background: "none",
             color: "white",
@@ -28,10 +29,10 @@ const UserMenu = (props) => {
           <div className={style.imgDiv}>
             <img src={userPic} className={style.img} alt='user' />
           </div>
-          Mi Perfil
+          <h4>Mi Perfil</h4>
         </MenuButton>
         <MenuList bg="black">
-          <Link to="/cart"><MenuItem bg="black" color="white" fontFamily="Share Tech, sans-serif" fontSize="1.2rem" _hover={{
+          <Link to="/cart"><MenuItem bg="black" color="white" fontSize="1.2rem" _hover={{
             background: "green",
             color: "black",
           }} >
@@ -39,7 +40,7 @@ const UserMenu = (props) => {
             Mi Carrito
 
           </MenuItem></Link>
-          <Link to="/favorites"><MenuItem bg="black" color="white" fontFamily="Share Tech, sans-serif" fontSize="1.2rem" _hover={{
+          <Link to="/favorites"><MenuItem bg="black" color="white" fontSize="1.2rem" _hover={{
             background: "green",
             color: "black",
           }}>
@@ -47,7 +48,7 @@ const UserMenu = (props) => {
             Mis Favoritos
 
           </MenuItem></Link>
-          <Link to={`/Orders/${props.id}`} ><MenuItem bg="black" color="white" fontFamily="Share Tech, sans-serif" fontSize="1.2rem" _hover={{
+          <Link to={`/Orders/${props.id}`} ><MenuItem bg="black" color="white" fontSize="1.2rem" _hover={{
             background: "green",
             color: "black",
           }}>
@@ -55,7 +56,7 @@ const UserMenu = (props) => {
             Mis Ordenes
 
           </MenuItem></Link>
-          <Link to="/userprofile"><MenuItem bg="black" color="white" fontFamily="Share Tech, sans-serif" fontSize="1.2rem" _hover={{
+          <Link to="/userprofile"><MenuItem bg="black" color="white" fontSize="1.2rem" _hover={{
             background: "green",
             color: "black",
           }}>
@@ -63,6 +64,14 @@ const UserMenu = (props) => {
             Información
 
           </MenuItem></Link>
+          { props.isAdmin && <Link to="/admin"><MenuItem bg="black" color="white" fontFamily="Share Tech, sans-serif" fontSize="1.2rem" _hover={{
+            background: "green",
+            color: "black",
+          }}>
+
+            Panel de Administración
+
+          </MenuItem></Link>}
         </MenuList>
       </Menu>
     </div>

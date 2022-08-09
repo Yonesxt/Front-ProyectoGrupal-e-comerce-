@@ -99,7 +99,7 @@ const CheckoutForm = () => {
             </div>
 
             <button className='btn btn-success'>
-                Buy
+                Comprar/Pagar
             </button>
         </form>
     )

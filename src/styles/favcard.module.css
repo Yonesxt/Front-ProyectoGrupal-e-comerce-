@@ -48,7 +48,15 @@
 }
 .favButton{
 position: relative;
-    left: 315px;
-    top: 35px;
+    left: 340px;
+    top: 0px;
     width: 30px;
+    color: red;
+    font-size: 24px;
+}
+.btn {
+    height: 50px;
+    width: 200px;
+    background-color: #01F603;
+    border-radius: 0.5rem;
 }

@@ -8,7 +8,7 @@ import Details from './components/organisms/details';
 import Profile from './components/organisms/Profile.jsx';
 import Cart from './components/organisms/cart';
 import AboutUs from './components/organisms/aboutUs';
-import Faq from './components/organisms/FAQ';
+// import Faq from './components/organisms/FAQ';
 import NotFound from './components/organisms/notFound';
 import News from './components/organisms/news';
 import Favorites from './components/organisms/favorites';
@@ -26,6 +26,11 @@ import UserProfile from './components/organisms/userProfile';
 import { withAuthenticationRequired } from '@auth0/auth0-react'
 import TestCheckout from './components/organisms/checkoutForm/TestCheckout';
 import TestAddresForm from './components/organisms/checkoutForm/TestAddresForm';
+import Terms from './components/molecules/footer/Terms';
+import PrivacyPolicy from './components/molecules/footer/Privacy';
+import TermsOfUse from './components/molecules/footer/termsOfUse';
+import Returns from './components/molecules/footer/Returns';
+import Faq from './components/molecules/footer/FAQ';
 
 
 function App() {
@@ -58,6 +63,10 @@ function App() {
             <Route exact path='/categories' element={<Categories />} />            
             <Route exact path='*' element={<NotFound />} />
             <Route exact path = '/admin/*' element={<PrivateRoute component={Admin}/>} />
+            <Route exact path="/returns" element={<Returns />} />
+            <Route exact path="/termsandconditions" element={<Terms />} />
+            <Route exact path="/privacypolicy" element={<PrivacyPolicy />} />
+            <Route exact path="/termsofuse" element={<TermsOfUse />} />
           </Routes>
         </CartProvider>
       <Whatsapp />

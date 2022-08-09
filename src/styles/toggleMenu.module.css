@@ -1,0 +1,31 @@
+.menuButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color:#efefef;
+}
+.menuButton span {
+    font-size: 1.5rem;
+    margin: 10px;
+    font-family: 'Share Tech', sans-serif !important;
+}
+.menuButton img {
+    height: 2.5rem;
+    width: auto;
+}
+.span {
+    margin: 5px
+}
+
+@media only screen and (min-width: 960px) {
+    .toggleMenu {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .menuButton span {
+        display: none;
+    }
+}

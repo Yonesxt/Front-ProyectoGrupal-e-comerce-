@@ -1,10 +1,11 @@
-.footerContainer {
+/* .footerContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    padding: 30px;
+    width: 100vw;
     font-family: 'Share Tech', sans-serif;
     background-color: #333333;
-    padding: 30px;
 }
 .title {
     font-size: 20px;
@@ -30,4 +31,51 @@
 }
 .after img {    
     padding: 5px;
+} */
+
+
+
+
+
+
+.aboutText{
+    font-family: 'Share Tech', sans-serif;
+    color: #d3d3d3;
+    font-size: 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.aboutTitle{
+    font-family: 'Share Tech', sans-serif;
+    color: #d3d3d3;
+    font-size: x-large;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.backtohome{
+    font-family: 'Share Tech', sans-serif;
+    color: #d3d3d3;
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+.marginDiv{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.after {
+    position: fixed;
+    top: 84%;
+    right: 1%;
+    z-index: 9;
+    width: 100px;
+
+    display: flex;
+    justify-content: flex-end;
+    background-color: #33333300;
+    height: 70px;
+    object-fit: contain;
 }

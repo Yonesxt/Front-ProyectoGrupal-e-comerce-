@@ -1,0 +1,81 @@
+.bgfooter{
+    background-color: #000000;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 100%;
+    height: auto;
+}
+
+.divAlign{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.textTitleFooter{
+    font-family: 'Share Tech', sans-serif;
+    color: #d3d3d3;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.textTitleFooter2{
+    font-family: 'Share Tech', sans-serif;
+    color: #d3d3d3;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.textTitleFooter2:hover{
+    text-decoration:underline;
+  }
+
+  a.textTitleFooter2.active {
+    background-color: transparent;
+}
+
+.textTitleFooterinfoSize{
+    font-family: 'Share Tech', sans-serif;
+    color: #d3d3d3;
+    font-size: 20px;
+}
+
+.texttitle2{
+    font-family: 'Share Tech', sans-serif;
+    color: #d3d3d3;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.iconsSize{
+    margin-top: 5px;
+    font-size: 20px;
+    color: #d3d3d3;
+}
+
+
+.inputBox{
+    background-color: transparent;
+    border-radius: 5px;
+    border: 1px solid #949393;
+    outline: none;
+    font-family: 'Share Tech', sans-serif;
+    color: #d3d3d3;
+}
+.inputbtn{
+    border: none;
+    background-color: transparent;
+    color: #d3d3d3;
+} 
+
+.textTitleFooter2:hover{
+    text-decoration:underline;
+  }
+
+a.textTitleFooter2.active {
+    background-color: transparent;
+}
