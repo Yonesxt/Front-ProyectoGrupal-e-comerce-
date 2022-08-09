@@ -24,14 +24,19 @@ export default function UserProfile () {
     }
     
     function handleSubmit (e) {
+        e.preventDefault()
+
+        dispatch(changeProfile(userLoged.id, user))
         Swal.fire({
             title: 'Do you want to save the changes?',
             showDenyButton: true,
             showCancelButton: true,
             confirmButtonText: 'Save',
           }).then((result) => {
+             
                 Swal.fire('Saved!', '', 'success')
-                dispatch(changeProfile(userLoged.id, user))
+              
+                 location.reload()
             
           })
 
