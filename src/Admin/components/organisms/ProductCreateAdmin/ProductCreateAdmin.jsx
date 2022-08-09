@@ -111,7 +111,6 @@ export default function CreateForm() {
         stock: "",
         description: "",
       })
-      redirect()
     }
     else {
       alert("Rellene todos los campos del formulario")
