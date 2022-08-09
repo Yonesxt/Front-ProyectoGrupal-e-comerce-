@@ -23,8 +23,7 @@ export default function UserProfile () {
     }
     
     function handleSubmit (e) {
-        dispatch(changeProfile(userLoged.id, user))
-
+        
         swal({
             title: "Tu Perfil fue actualizado con exito",
             input: "text",
@@ -34,7 +33,9 @@ export default function UserProfile () {
             buttons: {
                 cancel: 'ok'
             }
-        })
+        }).then(()=>{
+                dispatch(changeProfile(userLoged.id, user))
+            })
     }
 
     useEffect(() => {
