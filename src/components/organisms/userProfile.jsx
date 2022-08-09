@@ -36,7 +36,6 @@ export default function UserProfile () {
                 cancel: 'ok'
             }
         })
-        window.location.reload()
     }
 
     useEffect(() => {
