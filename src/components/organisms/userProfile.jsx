@@ -24,23 +24,15 @@ export default function UserProfile () {
     }
     
     function handleSubmit (e) {
-        e.preventDefault()
-        dispatch(changeProfile(userLoged.id, user))
-
         Swal.fire({
             title: 'Do you want to save the changes?',
             showDenyButton: true,
             showCancelButton: true,
             confirmButtonText: 'Save',
-            denyButtonText: `Don't save`,
           }).then((result) => {
-            if (result.isConfirmed) {
                 Swal.fire('Saved!', '', 'success')
-              
-              window.location.reload()
-            } else if (result.isDenied) {
-                Swal.fire('Changes are not saved', '', 'info')
-            }
+                dispatch(changeProfile(userLoged.id, user))
+            
           })
 
     }
