@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { changeProfile, token } from '../../redux/actions'
 import { useAuth0 } from "@auth0/auth0-react";
 import swal from 'sweetalert';
+import Swal from 'sweetalert2';
 import user from '../../assets/user.png'
 import style from '../../styles/userProfile.module.css'
 
@@ -26,20 +27,19 @@ export default function UserProfile () {
         e.preventDefault()
         dispatch(changeProfile(userLoged.id, user))
 
-        swal.fire({
+        Swal.fire({
             title: 'Do you want to save the changes?',
             showDenyButton: true,
             showCancelButton: true,
             confirmButtonText: 'Save',
             denyButtonText: `Don't save`,
           }).then((result) => {
-            /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
-              swal.fire('Saved!', '', 'success')
+                Swal.fire('Saved!', '', 'success')
               
               window.location.reload()
             } else if (result.isDenied) {
-              swal.fire('Changes are not saved', '', 'info')
+                Swal.fire('Changes are not saved', '', 'info')
             }
           })
 
