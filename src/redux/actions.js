@@ -344,8 +344,10 @@ export function deleteComment(id) {
 
 export function createProduct(payload) {
     return async function (dispatch) {
+        console.log(payload)
         const json = await axios.post(`https://calm-dusk-93190.herokuapp.com/api/products/`, payload)
         const data = await json.data
+        console.log(data)
         return dispatch({
             type: CREATE_PRODUCT,
             payload: data
