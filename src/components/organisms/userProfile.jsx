@@ -3,9 +3,7 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeProfile, token } from '../../redux/actions'
 import { useAuth0 } from "@auth0/auth0-react";
-import swal from 'sweetalert';
 import Swal from 'sweetalert2';
-import user from '../../assets/user.png'
 import style from '../../styles/userProfile.module.css'
 
 export default function UserProfile () {
@@ -29,7 +27,7 @@ export default function UserProfile () {
         dispatch(changeProfile(userLoged.id, user))
         Swal.fire({
             title: 'Los cambios fueron guardados',
-            confirmButtonText: 'Save',
+            confirmButtonText: 'Guardar',
           }).then((result) => {
                 Swal.fire({
                  icon: 'success', 
