@@ -23,7 +23,6 @@ export default function UserProfile () {
     }
     
     function handleSubmit (e) {
-        e.preventDefault()
         dispatch(changeProfile(userLoged.id, user))
 
         swal({
