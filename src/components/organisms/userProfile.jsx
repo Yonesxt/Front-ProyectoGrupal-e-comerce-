@@ -33,11 +33,8 @@ export default function UserProfile () {
             showCancelButton: true,
             confirmButtonText: 'Save',
           }).then((result) => {
-             
                 Swal.fire('Saved!', '', 'success')
-              
-                 location.reload()
-            
+                 window.location.reload()
           })
 
     }
