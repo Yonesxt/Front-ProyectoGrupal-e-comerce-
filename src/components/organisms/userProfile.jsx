@@ -28,13 +28,13 @@ export default function UserProfile () {
 
         dispatch(changeProfile(userLoged.id, user))
         Swal.fire({
-            title: 'Do you want to save the changes?',
-            showDenyButton: true,
-            showCancelButton: true,
+            title: 'Los cambios fueron guardados',
             confirmButtonText: 'Save',
           }).then((result) => {
                 Swal.fire('Saved!', '', 'success')
-                 window.location.reload()
+                setTimeout(() => {
+                    window.location.reload()
+                }, 1000);
           })
 
     }
