@@ -1,33 +1,22 @@
-.bgfooter{
-    background-color: #000000;
-    padding: 15px;
+.bgfooter {
+    background-color: #1b1b1b;
+    padding: 30px 30px 50px 30px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-between;
-
+    justify-content: space-evenly;
     width: 100%;
     height: auto;
+    font-family: 'Share Tech', sans-serif !important;
+    color: #d3d3d3 !important;
+    font-size: 17px !important;
+    text-decoration: none !important;
 }
 
-.divAlign{
+.divAlign {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-}
-
-.textTitleFooter{
-    font-family: 'Share Tech', sans-serif;
-    color: #d3d3d3;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.textTitleFooter2{
-    font-family: 'Share Tech', sans-serif;
-    color: #d3d3d3;
-    font-size: 20px;
-    text-decoration: none;
 }
 
 .textTitleFooter2:hover{
@@ -38,38 +27,45 @@
     background-color: transparent;
 }
 
-.textTitleFooterinfoSize{
-    font-family: 'Share Tech', sans-serif;
-    color: #d3d3d3;
-    font-size: 20px;
-}
-
-.texttitle2{
-    font-family: 'Share Tech', sans-serif;
-    color: #d3d3d3;
-    font-size: 20px;
-    text-decoration: none;
-}
-
 .iconsSize{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     margin-top: 5px;
     font-size: 20px;
     color: #d3d3d3;
 }
-
-
+.contactUs {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.inputSubmit {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 35px;
+}
 .inputBox{
-    background-color: transparent;
+    background-color: #333333;
     border-radius: 5px;
-    border: 1px solid #949393;
+    padding: 3px 7px;
     outline: none;
     font-family: 'Share Tech', sans-serif;
     color: #d3d3d3;
 }
 .inputbtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: none;
-    background-color: transparent;
-    color: #d3d3d3;
+    width: 70px;
+    height: 30px;
+    padding: 5px;
+    margin-left: 5px;
+    border-radius: 4px;
+    background-color: greenyellow;
+    color: #000000;
 } 
 
 .textTitleFooter2:hover{
@@ -78,4 +74,27 @@
 
 a.textTitleFooter2.active {
     background-color: transparent;
+}
+
+@media only screen and (max-width: 800px) {
+    .contact {
+        display: none;
+    }
+    .bgfooter {
+        font-size: 13px !important;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .bgfooter {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        font-size: 16px !important;
+    }
+    .divAlign {
+        margin-bottom: 50px;
+    }
 }

@@ -66,6 +66,12 @@
 
 @media only screen and (max-width: 1200px) {
     .container {
-        width: 18vw !important
+        width: 18vw
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .container {
+        width: 30vw
     }
 }

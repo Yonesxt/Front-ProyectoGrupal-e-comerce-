@@ -3,6 +3,7 @@
 }
 .swiperContainer {
     background-color: #333333;
+    padding: 20px;
     width: 100vw;
 }
 .title {
@@ -17,10 +18,26 @@
     background-color: #1e2020d8;
     margin: 20px 20px 20px 20px;
     border-radius: 4px;
+    overflow: hidden;
 }
 
 @media only screen and (max-width: 1200px) {
     .sliderbg {
-        width: 18vw !important
+        width: 18vw
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .swiperContainerRes {
+        display: block;
+        padding: 30px;
+        width: 100vw;
+        background-color: #333333;
+    }
+    .sliderbg {
+        width: 30vw;
+    }
+    .sliderbg img {
+        margin: 30px
     }
 }

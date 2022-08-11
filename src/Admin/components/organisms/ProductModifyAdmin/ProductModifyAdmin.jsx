@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Axios from 'axios';
-   import {
-    getProducts,
-    updateProduct
-
-   } from "../../../../redux/actions";
+import {
+  getProducts,
+  updateProduct
+} from "../../../../redux/actions";
 
 import style from './ProductModifyAdmin.module.css'
 
@@ -44,7 +43,6 @@ function redirect() {
 }
 export default function CreateForm() {
   const dispatch = useDispatch();
-  const nav = useNavigate();
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);
@@ -52,34 +50,31 @@ export default function CreateForm() {
   const [errors, setErrors] = React.useState({});
 
   //Modify
-  const {id} = useParams()
+  const { id } = useParams()
 
-  let selectedProduct = products.filter((item)=> item.id === id)
-
-  
-
+  let selectedProduct = products.filter((item) => item.id === id)
 
   const [update, setProduct] = useState({
-    name: selectedProduct[0].name ,
+    name: selectedProduct[0].name,
     brand: selectedProduct[0].brand,
     image: selectedProduct[0].image,
     price: selectedProduct[0].price,
-    categories: [selectedProduct[0].Categories[0].name] ,
+    categories: [selectedProduct[0].Categories[0].name],
     stock: selectedProduct[0].stock,
     rating: selectedProduct[0].rating,
     description: selectedProduct[0].description,
   });
-  
+
   console.log("this", update)
   // crea un set de brands para el select 
   const setBrand = [];
   products.map((e) => setBrand.push(e.brand));
   let allBrand = [...new Set(setBrand)];
   const category = []
-  
+
   products.map((e) => category.push(e.Categories[0]?.name))
   let setCat = [...new Set(category)]
-  console.log( "setcat" ,setCat)
+  console.log("setcat", setCat)
 
   const handleInputChange = function (e) {
 
@@ -90,14 +85,12 @@ export default function CreateForm() {
     setErrors(objError)
   }
 
-
-
   const handleSubmit = function (e) {
     e.preventDefault();
     setErrors(validate(setProduct))
     if (Object.keys(errors).length === 0 && update.categories.length > 0) {
-  
-      dispatch(updateProduct(id , update));
+
+      dispatch(updateProduct(id, update));
       setProduct({
         name: "",
         brand: "",
@@ -114,36 +107,7 @@ export default function CreateForm() {
       alert("Rellene todos los campos del formulario")
     }
   }
-  //useEffect(() => {
-  //  dispatch(getAllProducts());
-  // }, [dispatch]);
-  // useEffect(() => {
-  //   dispatch(getAllCategories());
-  // }, [dispatch]);
-  const handleInputBrand = function (e) {
-    e.preventDefault();
-    if (Object.values(update.brand).includes(e.target.value)) {
-      alert("Esta marca ya se encuentra en la lista")
-    }
-    else if (!e.target.value) {
 
-    }
-    else {
-      setProduct({
-        ...update, brand: [...update.brand, e.target.value]
-      });
-      let objError = validate({ ...update, [e.target.name]: e.target.value });
-      setErrors(objError)
-    }
-  }
-  const handleDeleteBrand = function (e) {
-    if (window.confirm(`¿Quiere eliminar la marca: ${e} de la Lista?`)) {
-      setProduct({
-        ...update,
-        brand: update.brand.filter(k => k !== e)
-      })
-    }
-  }
 
   const uploadImage = (files) => {
     const formData = new FormData();
@@ -232,26 +196,26 @@ export default function CreateForm() {
             </div>
             <div className={style.divcell}>
               <label className={style.label1}>Imagen: </label>
-                <input
-                  className={style.choose}
-                  type="file"
-                  title=" "
-                  onChange={(e) => {
-                    uploadImage(e.target.files);
-                  }}
-                ></input>
-                {update.image &&
-                  <div>
-                    <img className={style.img} src={update.image} alt="" width='400px' />
-                    <button
-                      className={style.x}
-                      name={update.image}
-                      onClick={(name) => handleDeleteImage(name)}
-                    >
-                      X
-                    </button>
-                  </div>
-                }
+              <input
+                className={style.choose}
+                type="file"
+                title=" "
+                onChange={(e) => {
+                  uploadImage(e.target.files);
+                }}
+              ></input>
+              {update.image &&
+                <div>
+                  <img className={style.img} src={update.image} alt="" width='400px' />
+                  <button
+                    className={style.x}
+                    name={update.image}
+                    onClick={(name) => handleDeleteImage(name)}
+                  >
+                    X
+                  </button>
+                </div>
+              }
               {errors.image}
             </div>
             <div>
@@ -260,12 +224,12 @@ export default function CreateForm() {
                 <select required="required" className={style.input1} defaultValue="" name="brand" onChange={(e) => handleInputChange(e)}>
                   <option value={selectedProduct[0].brand} selected > {selectedProduct[0].brand}</option>
                   {
-                    allBrand?.filter((item)=>item !== selectedProduct[0].brand).map((e, i) =>
+                    allBrand?.filter((item) => item !== selectedProduct[0].brand).map((e, i) =>
                       (<option key={i} value={e}>{e}</option>))
                   }
                 </select>
                 {errors.brand}
-              </div>                          
+              </div>
               <div className={style.btndiv}>
                 <button type="submit" className={style.btn} onClick={handleSubmit}>
                   Modificar

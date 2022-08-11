@@ -1,72 +1,104 @@
 .div {
-    background-color: #17771777;
-    margin: 10 px;
-    display: flex;    
-}
-
-.textarea{
+    background-color: #4ecf4e77;
+    border-radius: 0.5rem;
     display: flex;
-    justify-content: space-around;
-    align-items: flex-start;    
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
 }
-
-.btnSend {
-    padding: 4px;
-    background-color: #01f60470;
-    margin-top: 10px;
-    margin-right: 17px;
-    border-radius: 4px;
-    color: #fff;
-    transition: 0.5s;
+.numberOfComments{
+    color: black;
+    margin: 2rem;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 900;
 }
-
-.btnSEnd:hover {
-    color: #000;
-    background-color: #ffffff90;
-    letter-spacing: 1px;
-}
-
-.allComments{
+.userRating{
     display: flex;
     justify-content: flex-start;
-    border: 1px solid #ffffffa6;
-    border-radius: 5px;
-    background-color: #383838;
-    padding: 2px;
-    width: max-content;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+.division{
+    display: flex;
+    background-color: #c4c4c4 ;
+    border-radius: 0.5rem;
+    justify-content: space-between;
+    box-shadow: 0 0 15px black inset;
+    padding: 2rem;
+}
+.iconDelete{
+    font-size: 25px;
+    text-align: center;
+    color: red;
+}
+.allComments {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 15px black ;
+    margin: 1rem;
+    background-color: #777777;
+    padding: 10px;
+    width: 1200px;
     height: auto;
 }
 
-.btnTrash1{
+.btnTrash1 {
     margin: 1rem;
     display: flex;
     justify-content: flex-end;
 }
-.btnTrash1:hover{
+
+.btnTrash1:hover {
     transform: scale(1.2);
-    border: 1px solid #ff06067c ;
+    border: 1px solid #ff06067c;
     border-radius: 5px;
 }
 
-.trash1{
+.trash1 {
     height: 25px;
 }
 
-.titleUser{
-    color: #01F603 ,
+.titleUser {
+    margin-left: 1rem;
+    color: rgba(29, 29, 29, 0.993);
+    font-weight: 600;
+    margin-right: 1rem;
+    font-size: 22px;
+}
+.titleUser2 {
+    color: #eec926;
+    font-weight: 600;
+    margin-right: 1rem;
+    font-size: 22px;
 }
 
-.text{
-    color: #ffffff ,
+.text {
+    color: #ffffff,
+}
+.divDelete button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #01F603;
+}
+.btnDelete {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 25px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 0.5rem;
+    height: 50px;
+    width: 50px;
+    font-family: "Share Tech", sans-serif;
+
 }
 
-.btnDelete{
-  margin-top: 20px;
-  margin-right: 25px;
-  background-color: rgb(0, 0, 0);
-  border-radius: 0.5rem;
-  height: 50px;
-  width: 100px;
-  font-family: "Share Tech", sans-serif;  
-  color: #2ecc36;
+.NoComments {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
 }

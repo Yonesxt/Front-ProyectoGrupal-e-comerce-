@@ -21,9 +21,15 @@
 
 @media only screen and (max-width: 650px) {
     .navbarContainer {
-        height: 110px;
+        height: 60px;
     }
     .logo {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    .searchbar {
         display: none;
     }
 }

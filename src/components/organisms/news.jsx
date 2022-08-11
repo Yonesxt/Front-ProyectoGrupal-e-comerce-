@@ -1,8 +1,4 @@
 import React from "react";
-import news1 from '../../assets/news8.png'
-import news2 from '../../assets/news10.jpg'
-import news3 from '../../assets/news11.jpg'
-import news4 from '../../assets/news13.jpg'
 import newsReal1 from '../../assets/noticiasReal1.jpeg'
 import newsReal2 from '../../assets/noticiasReal2.jpeg'
 import newsReal3 from '../../assets/noticiasReal3.jpg'
@@ -23,7 +19,7 @@ export default function News() {
                     <p className={style.texto}>El Ministerio de Tecnologías de la Información y las Comunicaciones le otorgó oficialmente los permisos a Starlink para que funcione en el país. Según las autoridades, el proyecto ofrece una oportunidad para mejorar la conexión de las zonas rurales en el territorio.
                         <br />
                         “En nuestra ruta por cerrar la brecha digital desde todos los puntos de vista, la entrada de esta nueva compañía al país significó una mejora sustancial en la forma en que se conectarán las regiones, pues gracias a la tecnología satelital de actores como Starlink se ampliará la oferta en el mercado, y gracias a los beneficios establecidos en el nuevo régimen, el dinero que deja de percibir el MinTIC en materia de pagos por uso de espectro podrán ser reinvertidos para mejora del servicio al usuario final”, afirmó Carmen Ligia Valderrama Rojas, Ministra TIC.
-                            <br />
+                        <br />
                         La Resolución 376 de 2022 busca abrir el camino para que lleguen nuevas empresas satelitales al país. Con este mismo permiso, se buscará mejorar las conexiones 4G y 5G en Colombia.
 
                     </p>
@@ -33,9 +29,9 @@ export default function News() {
             <div className={style.containerNews}>
                 <div>
                     <p className={style.texto}>“Una ciudad inteligente o 'smart city' aplica las nuevas tecnologías para lograr objetivos como alcanzar las metas de desarrollo y sostenibilidad de cada administración, mejorar la calidad de vida de sus habitantes tomando decisiones en tiempo real, aumentar la participación ciudadana en el ecosistema urbano, y garantizar la correcta disposición y el uso eficiente de los recursos disponibles”, explica Diego Valderrama, subgerente de clientes de gobierno de Enel X, línea de negocio de Enel Colombia.
-                            <br />
+                        <br />
                         Por ello, una ciudad intel gente no solo se destaca por sus altos niveles de conectividad, sino también por dirigir sus esfuerzos hacia la sostenibilidad económica, social y ambiental.
-                            <br />
+                        <br />
                         Enel X trabaja de la mano con las administraciones municipales para que estas puedan responder de manera más efectiva tanto a sus necesidades particulares como a los desafíos globales.</p>
                 </div>
                 <div>

@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 export function SearchBar ({searchedProducts, getProductByName}) {
-
+    // eslint-disable-next-line
     const [products, setProducts] = useState('')
     const [value, setValue] = useState('')
 

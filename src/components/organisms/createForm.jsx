@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getProducts,
@@ -41,7 +41,6 @@ function redirect() {
 }
 export default function CreateForm() {
   const dispatch = useDispatch();
-  const nav = useNavigate();
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);
@@ -63,7 +62,7 @@ export default function CreateForm() {
   products.map((e) => setBrand.push(e.brand));
   let allBrand = [...new Set(setBrand)];
   const category = []
-  
+
   products.map((e) => category.push(e.Categories[0]?.name))
   let setCat = [...new Set(category)]
 
@@ -117,36 +116,7 @@ export default function CreateForm() {
       alert("Rellene todos los campos del formulario")
     }
   }
-  //useEffect(() => {
-  //  dispatch(getAllProducts());
-  // }, [dispatch]);
-  // useEffect(() => {
-  //   dispatch(getAllCategories());
-  // }, [dispatch]);
-  const handleInputBrand = function (e) {
-    e.preventDefault();
-    if (Object.values(newProduct.brand).includes(e.target.value)) {
-      alert("Esta marca ya se encuentra en la lista")
-    }
-    else if (!e.target.value) {
 
-    }
-    else {
-      setProduct({
-        ...newProduct, brand: [...newProduct.brand, e.target.value]
-      });
-      let objError = validate({ ...newProduct, [e.target.name]: e.target.value });
-      setErrors(objError)
-    }
-  }
-  const handleDeleteBrand = function (e) {
-    if (window.confirm(`¿Quiere eliminar la marca: ${e} de la Lista?`)) {
-      setProduct({
-        ...newProduct,
-        brand: newProduct.brand.filter(k => k !== e)
-      })
-    }
-  }
   const handleDeleteCategories = function (e) {
     if (window.confirm(`¿Quiere eliminar la marca: ${e} de la Lista?`)) {
       setProduct({
@@ -155,6 +125,7 @@ export default function CreateForm() {
       })
     }
   }
+
   const uploadImage = (files) => {
     const formData = new FormData();
     formData.append('file', files[0]);
@@ -170,7 +141,6 @@ export default function CreateForm() {
         });
         setErrors(validate(setProduct))
       });
-
   }
 
   function handleDeleteImage(e) {
@@ -256,24 +226,24 @@ export default function CreateForm() {
             </div>
             <div className={style.divcell}>
               <label className={style.label1}>Image: </label>
-                <input
-                  className={style.input1}
-                  type="file"
-                  onChange={(e) => {
-                    uploadImage(e.target.files);
-                  }}
-                ></input>
-                {newProduct.image &&
-                  <div>
-                    <img src={newProduct.image} alt="" width='500px' />
-                    <button
-                      name={newProduct.image}
-                      onClick={(name) => handleDeleteImage(name)}
-                    >
-                      X
-                    </button>
-                  </div>
-                }
+              <input
+                className={style.input1}
+                type="file"
+                onChange={(e) => {
+                  uploadImage(e.target.files);
+                }}
+              ></input>
+              {newProduct.image &&
+                <div>
+                  <img src={newProduct.image} alt="" width='500px' />
+                  <button
+                    name={newProduct.image}
+                    onClick={(name) => handleDeleteImage(name)}
+                  >
+                    X
+                  </button>
+                </div>
+              }
               {errors.image}
             </div>
             <div>

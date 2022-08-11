@@ -19,7 +19,7 @@ const UserMenu = (props) => {
       <Menu isLazy>
         <MenuButton as={Button} className={style.menuButton}
           bg="none" color="white" fontSize="1rem"
-           _hover={{
+          _hover={{
             background: "none",
             color: "brand.green",
           }} _active={{
@@ -64,7 +64,7 @@ const UserMenu = (props) => {
             Información
 
           </MenuItem></Link>
-          { props.isAdmin && <Link to="/admin"><MenuItem bg="black" color="white" fontFamily="Share Tech, sans-serif" fontSize="1.2rem" _hover={{
+          {props.isAdmin && <Link to="/admin"><MenuItem bg="black" color="white" fontFamily="Share Tech, sans-serif" fontSize="1.2rem" _hover={{
             background: "green",
             color: "black",
           }}>

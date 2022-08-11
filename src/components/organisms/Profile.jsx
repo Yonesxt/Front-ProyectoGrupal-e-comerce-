@@ -11,8 +11,6 @@ import {
     Button,
     Input,
   } from '@chakra-ui/react'
-  
-
 
 const Profile = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()

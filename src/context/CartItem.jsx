@@ -1,7 +1,5 @@
 import React, { createContext, useState, useEffect, useContext } from "react";
-import swal from 'sweetalert';
 import swal2 from 'sweetalert2';
-import { useSelector } from 'react-redux'
 
 const CartContext = createContext();
 
@@ -13,8 +11,6 @@ export const CartProvider = ({ children }) => {
         products: []
     }
 
-    const mensaje = useSelector((state) => state.msgCart)
-
     const [state, setState] = useState(() => {
         try {
             const productInLocalStorage = localStorage.getItem('cartState');
@@ -25,7 +21,7 @@ export const CartProvider = ({ children }) => {
             return initialState
         }
     });
-    
+
     useEffect(() => {
         localStorage.setItem('cartState', JSON.stringify(state))
     }, [state]);
@@ -47,7 +43,7 @@ export const CartProvider = ({ children }) => {
         if (inCart) {
             newItems = cartItems.map((productInCart) => {
                 if (productInCart.id === itemToAdd.id) {
-                    if(inCart.amount === inCart.stock){
+                    if (inCart.amount === inCart.stock) {
                         swal2.fire({
                             position: 'center',
                             icon: 'warning',
@@ -56,8 +52,8 @@ export const CartProvider = ({ children }) => {
                             timer: 1500
                         })
                         return productInCart;
-                    }else {
-                        return { ...inCart, amount: inCart.amount + 1};
+                    } else {
+                        return { ...inCart, amount: inCart.amount + 1 };
                     }
                 } else return productInCart;
             })
@@ -73,8 +69,6 @@ export const CartProvider = ({ children }) => {
             })
         }
 
-        
-        
         updateState({ products: newItems });
     };
 
@@ -85,7 +79,7 @@ export const CartProvider = ({ children }) => {
 
         let itemDelete
 
-        if(inCart){
+        if (inCart) {
             itemDelete = cartItems.filter(({ id }) => id !== itemToDelete.id)
         }
 
@@ -110,7 +104,7 @@ export const CartProvider = ({ children }) => {
         if (inCart.amount === 1) {
 
             itemDelete = cartItems.filter(({ id }) => id !== itemToDelete.id)
-            
+
             swal2.fire({
                 position: 'center',
                 icon: 'error',
@@ -139,7 +133,6 @@ export const CartProvider = ({ children }) => {
             addItemToCart,
             deleteItemToCart,
             deleteAll
-            // deleteAllCart
         }
     }
 
@@ -151,68 +144,3 @@ export const CartProvider = ({ children }) => {
         </CartContext.Provider>
     )
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // if (inCart) {
-        //     newItems = cartItems.map((productInCart) => {
-        //         if (productInCart.id === itemToAdd.id) {
-        //             return { ...inCart, amount: inCart.amount + 1};
-        //         } else return productInCart;
-        //     })
-
-        // } else {
-        //     newItems = [...cartItems, { ...itemToAdd, amount: 1 }]
-        //     swal({
-        //         title: "Producto añadido al carrito",
-        //         input: "text",
-        //         showCancelButton: true,
-        //         confirmButtonText: "Guardar",
-        //         cancelButtonText: "Cancelar",
-        //         buttons: {
-        //             cancel: 'ok'
-        //         }
-        //     })
-        // }

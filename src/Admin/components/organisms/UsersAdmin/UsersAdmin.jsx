@@ -19,7 +19,6 @@ function UsersAdmin() {
 
   const users = useSelector((state) => state.allUsers);
   const searchedUsers = useSelector((state) => state.searchedUser);
-  console.log("sds", searchedUsers);
 
   async function handleBan(e) {
     swal({
@@ -33,7 +32,6 @@ function UsersAdmin() {
         swal("the user has changed successfully!", {
           icon: "success",
         });
-
         setTimeout(() => {
           window.location.reload();
         }, 1000);
@@ -55,7 +53,6 @@ function UsersAdmin() {
         swal("the user has changed successfully!", {
           icon: "success",
         });
-
         setTimeout(() => {
           window.location.reload();
         }, 1000);
@@ -72,7 +69,6 @@ function UsersAdmin() {
         <p>Usuario</p>
         <p>Email</p>
       </div>
-
       {users.map((e) => {
         return (
           <div className={style.card} key={e.id}>
@@ -123,5 +119,5 @@ function UsersAdmin() {
     </div>
   );
 }
-//
+
 export default UsersAdmin;

@@ -25,3 +25,9 @@
     font-family: "Share Tech", sans-serif;
     font-size: 25px;
 }
+
+@media only screen and (max-width: 700px) {
+    .container {
+        margin: 25px 2rem
+    }
+}

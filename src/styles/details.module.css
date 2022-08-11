@@ -1,5 +1,6 @@
 .containerG {
     display: flex;
+    background-color: white;
 
 }
 
@@ -169,5 +170,37 @@
     100% {
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .containerDet {
+        padding: 2rem;
+    }
+    .title {
+        font-size: 1.5rem;
+    }
+    .btn {
+        margin: 20px;
+        width: 30vw;
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .containerDet {
+        padding: 1.25rem;
+        max-width: 50%;
+    }
+    .title {
+        font-size: 1.25rem;
+    }
+    .btn {
+        padding: 20px;
+        width: 20vw;
+        font-size: 0.75rem;
+    }
+    .img {
+        width: 100%
     }
 }

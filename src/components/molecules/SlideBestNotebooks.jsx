@@ -11,12 +11,11 @@ import 'swiper/css/effect-cards'
 import style from '../../styles/slidepopularproducts.module.css'
 import { Link } from 'react-router-dom';
 
-
 function SlideBestNotebooks() {
   const dispatch = useDispatch();
-  const [category, ] = useState({
+  const [category,] = useState({
     brand: "",
-    categorie: "Laptops",
+    categorie: ["Laptops"],
     order: "",
     praice: {
       min: 0,
@@ -24,16 +23,16 @@ function SlideBestNotebooks() {
     }
   })
   const infoBestNotebooks = useSelector(state => state.laptos);
-  const productsXRating = infoBestNotebooks.sort((obj1,obj2) => {
-    if(obj1.rating > obj2.rating) { return -1}
-    else if(obj1.rating < obj2.rating) {return 1}
-    else {return 0}
+  const productsXRating = infoBestNotebooks.sort((obj1, obj2) => {
+    if (obj1.rating > obj2.rating) { return -1 }
+    else if (obj1.rating < obj2.rating) { return 1 }
+    else { return 0 }
   })
   const productsToSee = productsXRating.slice(0, 10)
 
   useEffect(() => {
     dispatch(getFilters(category))
-  }, [dispatch])  
+  }, [dispatch])
 
   return (
     <div className={style.slideContainer}>
@@ -67,7 +66,6 @@ function SlideBestNotebooks() {
                 </SwiperSlide>
               )
             }) : null}
-
         </Swiper>
       </div>
     </div>

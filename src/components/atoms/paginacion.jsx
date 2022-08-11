@@ -9,14 +9,11 @@ export default function Pagination({paginate}) {
     const data = useSelector((state) => state.data)
     const productsPerPage = useSelector((state) => state.productsPerPage)
     
-
     const pageNumber = [];
 
     for(let i = 1; i <= Math.ceil(data.length/productsPerPage); i++) {
         pageNumber.push(i)
     }
-
-
 
     return(
         <nav className={styles.paginadodiv}>

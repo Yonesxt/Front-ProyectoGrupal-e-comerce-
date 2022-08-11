@@ -1,7 +1,6 @@
 import React from 'react'
 import whatsapp from '../../assets/whatsapp.png';
 import style from '../../styles/footer.module.css';
-import { NavLink } from "react-router-dom";
 
 export function Whatsapp() {
     const urlWhatsapp = 'https://api.whatsapp.com/send?phone='
@@ -9,8 +8,8 @@ export function Whatsapp() {
     const mensaje = "&text=Hola, quisiera comprar algunas cosas."
 
     return (
-        <a target='_blank' href={urlWhatsapp + contactNumber + mensaje}>
-                <img className={style.after} src={whatsapp} alt='whatsapp'/>            
+        <a target='_blank' rel="noreferrer" href={urlWhatsapp + contactNumber + mensaje}>
+            <img className={style.after} src={whatsapp} alt='whatsapp' />
         </a>
     )
 }

@@ -1,9 +1,9 @@
 .backg{
-    background-color: rgb(134, 134, 134);
+    background-color: rgb(58, 58, 58);
     
 }
 .wrapper{
-    background-color: #555555;
+    background-color: #686767;
     margin-right: auto;
     margin-left:  auto;
 
@@ -76,7 +76,8 @@ margin: 20px;
 }
 .x{
     position: relative;
-    bottom: 10px;
+    bottom: -30px;
+    left: -22px; 
     color: red;
     font-weight: bold;
     font-size: 22px;

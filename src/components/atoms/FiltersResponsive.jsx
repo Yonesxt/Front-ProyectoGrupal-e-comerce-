@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { getCate, getFilterBrand, getFilters, getProducts, numberPage } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-import style from "../../styles/allProducts.module.css";
 import { useNavigate } from "react-router-dom";
+import style from '../../styles/FiltersResponsive.module.css'
 
-
-export default function Filters() {
+export default function FiltersResponsive () {
     const dispatch = useDispatch();
     const [input, setInput] = useState({
         "brand": [],
@@ -52,7 +51,7 @@ export default function Filters() {
         e.preventDefault(e);
         if (input.categorie.includes(e.target.value)) {
             return
-        } else if(e.target.value) {
+        } else {
             setInput({
                 ...input,
                 categorie: [...input.categorie, e.target.value]
@@ -64,7 +63,7 @@ export default function Filters() {
         e.preventDefault(e);
         if (input.brand.includes(e.target.value)) {
             return
-        } else if(e.target.value) {
+        } else {
             setInput({
                 ...input,
                 brand: [...input.brand, e.target.value]
@@ -117,41 +116,11 @@ export default function Filters() {
 
     return (
         <div>
-            <div className={style.brandss}>
-                {input.categorie.map(c => {
-
-                    return (
-                        <div key={c} >
-                            <div className={style.brands2}>
-                                <p >{c}</p>
-                                <button className={style.botnX} onClick={() => handleDeleteCategorie(c)} >x</button>
-                            </div>
-                        </div>
-                    )
-                }
-                )}
-            </div>  
-            <div className={style.brandss2}>
-                    {input.brand.map(c => {
-
-                        return (
-                            <div key={c} >
-                                <div className={style.brands2}>
-                                    <p >{c}</p>
-                                    <button className={style.botnX} onClick={() => handleDeleteBrand(c)} >x</button>
-                                </div>
-                            </div>
-                        )
-                    }
-                    )}
-                </div>
-                <br />
+        <div className={style.filterContainer}>
 
             {/* ----------- filtro de categorias---------- */}
-            <label className={style.row}>
-                <p className={style.title}>Categoria</p>
                 <select className={style.select} onChange={(e) => handleCategory(e)}>
-                    <option value="">---</option>
+                    <option value=""  default="true" disabled>Categorias</option>
                     {
                         allCategories && allCategories.map((item, index) => (
                             <option key={index} value={item} >
@@ -160,16 +129,12 @@ export default function Filters() {
                         ))
                     }
                 </select>
-            </label>
             <br />
 
             {/* ----------- filtro de marcas ---------- */}
 
-            <label className={style.row}>
-                <p className={style.title}>Marca</p>
-            </label>
-            <select className={style.select } onChange={(e) => handleOrderBrand(e)} >
-                <option value="">---</option>
+            <select className={style.select} onChange={(e) => handleOrderBrand(e)} >
+                <option value="" default="true" disabled>Marcas</option>
                 {
                     brands && brands.map((item, index) => (
                         <option key={index} value={item}>
@@ -181,37 +146,55 @@ export default function Filters() {
             <br />
 
             {/* ----------- filtro de precio ---------- */}
-            <label className={style.titleColor}>
-                Precio:
-                <br />
-                <label className={style.row}>
-                    Min $
-                </label>
                 <input
                     type="number"
                     name="min"
                     min="0"
                     value={input.praice.min}
-                    placeholder='0'
+                    placeholder='Min'
                     onChange={(e) => handleFilterMin(e)}
                 />
-                <label className={style.row}>
-                    Max $
-                </label>
+
                 <input
                     type="number"
                     name="max"
                     max="200000"
                     value={input.praice.max}
-                    placeholder='200000'
+                    placeholder='Max'
                     onChange={(e) => handleFilterMax(e)}
                 />
                 <br />
+
                 <button className={style.btn} onClick={(e) => handleSubmit(e)}>Filtrar </button>
                 <button className={style.btn} onClick={(e) => { handleCLickRecharge(e) }}>Limpiar Filtros</button>
-            </label>
-
         </div>
+        <div className={style.filters}>
+            <div className={style.brandss}>
+                    {input.categorie.map(c => {
+
+                        return (
+                            <div key={c} >
+                                <div className={style.brands2}>
+                                    <p >{c}</p>
+                                    <button className={style.botnX} onClick={() => handleDeleteCategorie(c)} >✖</button>
+                                </div>
+                            </div>
+                        )
+                    }
+                    )}
+            </div>  
+            <div className={style.brandss}>
+                {input.brand.map(c => {
+                    return (
+                        <div key={c} >
+                            <div className={style.brands2}>
+                                <p>{c}</p>
+                                <button className={style.botnX} onClick={() => handleDeleteBrand(c)} >✖</button>
+                            </div>
+                        </div>
+                )})}
+            </div>
+        </div>
+    </div>
     )
 }
-

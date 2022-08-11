@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import { crateComment, getAllByidUser, getProducts } from "../../redux/actions";
+import { crateComment, getAllByidUser } from "../../redux/actions";
 import style from "../../styles/UserOrders.module.css";
-import swal from 'sweetalert';
+import swal2 from 'sweetalert2';
 import {
   Modal,
   ModalOverlay,
@@ -21,7 +21,6 @@ const UserOrders = () => {
   const { id } = useParams()
   useEffect(() => {
     dispatch(getAllByidUser(id))
-
   }, [])
 
   const allOrders = useSelector((state) => state.UserOrders)
@@ -36,14 +35,11 @@ const UserOrders = () => {
     userId: idUser
   })
 
-  const myOrders = allOrders.filter((e)=>e.UserId===idUser)
+  const myOrders = allOrders.filter((e) => e.UserId === idUser)
 
   const [option, setOption] = useState(true)
 
   const { isOpen, onOpen, onClose } = useDisclosure()
-
-
-
 
   function handleOption(e) {
     e.preventDefault(e)
@@ -81,15 +77,12 @@ const UserOrders = () => {
       userId: idUser
     })
     setOption(true)
-    swal({
-      title: "Gracias por su comentario.",
-      input: "text",
-      showCancelButton: true,
-      confirmButtonText: "Guardar",
-      cancelButtonText: "Cancelar",
-      buttons: {
-        cancel: 'ok'
-      }
+    swal2.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Gracias por su comentario',
+      showConfirmButton: false,
+      timer: 1500
     })
     onClose()
   }
@@ -116,8 +109,6 @@ const UserOrders = () => {
     <div className={style.container}>
       <h2 className={style.Title}> Mis ordenes</h2>
 
-
-
       {myOrders && myOrders.length ? (
         <>
           {myOrders.map((order) => {
@@ -129,7 +120,7 @@ const UserOrders = () => {
                 {order.Products.map((item) => {
                   return (
                     <div className={style.productDiv}>
-                      <div>
+                      <div className={style.divImg}>
                         <img src={item.image} alt="item" />
                       </div>
                       <div className={style.productDivinfo}>
@@ -161,28 +152,29 @@ const UserOrders = () => {
                             <ModalCloseButton />
                             <ModalBody>
                               <fieldset>
-                                <p>(1 = malo y 5 = excelente)</p>
-                                {
-                                  optionsRating.map(({ value }) => {
-                                    return (
-                                      <div >
+                                <div className={style.numbers}>
+                                  {
+                                    optionsRating.map(({ value }) => {
+                                      return (
                                         <div >
-                                          <input type="radio" id={value} name="rating" value={value} onChange={e => handleRating(e)}
-                                          />
-                                          <label for="huey">{value}</label>
+                                          <div>
+                                            <input className={style.numberInput} type="radio" id={value} name="rating" value={value} onChange={e => handleRating(e)}
+                                            />
+                                            <label for="huey">{value}</label>
+                                          </div>
                                         </div>
-                                      </div>
-                                    )
-                                  })
-                                }
+                                      )
+                                    })
+                                  }
+                                </div>
                               </fieldset>
-                              <Textarea placeholder='Escribe tu comentario aqui...' value={input.text} onChange={e => handleText(e)} />
+                              <Textarea placeholder='Escribe tu comentario aqui...' value={input.text} onChange={e => handleText(e)} className={style.texarea} />
                             </ModalBody>
                             <ModalFooter>
-                              <button colorScheme='blue' mr={3} onClick={onClose}>
+                              <button colorScheme='blue' mr={3} onClick={onClose} className={style.btnModal}>
                                 Cancelar
                               </button>
-                              <button variant='ghost' onClick={(e) => handleSubmit(e)}>Crear Comentario</button>
+                              <button variant='ghost' onClick={(e) => handleSubmit(e)} className={style.btnModal}>Crear Comentario</button>
                             </ModalFooter>
                           </ModalContent>
                         </Modal>
@@ -204,10 +196,3 @@ const UserOrders = () => {
 };
 
 export default UserOrders;
-//<h3 className={style.info}>{e.paymentMethod}</h3>
-//                <h3 className={style.info}>{e.state}</h3>
-//                <h3 className={style.info}>{e.shipmentAddress}</h3>
-//                <h3 className={style.info}>{e.postalCode}</h3>
-//                <NavLink to={`/orderdetail/${e.id}`}>
-//                  <button className={style.cardbtn}>Detalle</button>
-//                </NavLink>

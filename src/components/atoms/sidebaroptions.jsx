@@ -51,7 +51,7 @@ export function SidebarOptions(props) {
     return (
         <div className={style.options}>
                 {isAuthenticated && (
-                    <span className={style.span}>Hola {user.given_name}!</span>
+                    <span className={style.span}>Hola {user.given_name} {user.family_name}!</span>
                 )}
                 {links.map(({ to, name, src, styleClass, cartNumber }) => (
                     <Link to={to} className={style.link} key={name}>

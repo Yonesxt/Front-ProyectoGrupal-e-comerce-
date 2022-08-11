@@ -10,55 +10,59 @@
 
 .card {
   display: grid;
-  grid-template-columns: 120px 120px 130px 250px 75px 120px 150px 75px 150px 110px;
+  grid-template-columns: 120px 120px 130px 250px 100px 120px 150px 75px;
   grid-auto-rows: auto;
   margin: 1rem;
   border-radius: 0.5rem;
-  color: white;  
+  color: white;
   background-color: #424242;
   box-shadow: 1px 1px 10px rgb(45, 226, 21);
   font-family: "Share Tech", sans-serif;
   height: 100px;
   overflow: hidden;
   text-overflow: ellipsis;
-  
 }
 .element {
   margin: 10px 5px 10px 5px;
 }
 
 .DelBtn {
-    margin-top: 20px;
-    margin-left: 25px;
+  margin-top: 20px;
+  margin-left: 25px;
   background-color: rgb(0, 0, 0);
   border-radius: 0.5rem;
   height: 50px;
   width: 100px;
-  font-family: "Share Tech", sans-serif;  
+  font-family: "Share Tech", sans-serif;
   color: #2ecc36;
 }
 .DelBtn:hover {
-    box-shadow: 1px 1px 25px red inset;
+  box-shadow: 1px 1px 25px red inset;
   color: red;
 }
 .ModBtn {
-    margin-top: 20px;
-    margin-left: 25px;
+  margin-top: 20px;
+
   background-color: rgb(0, 0, 0);
   border-radius: 0.5rem;
   height: 50px;
   width: 100px;
-  font-family: "Share Tech", sans-serif;  
+  font-family: "Share Tech", sans-serif;
   color: #2ecc36;
 }
+.ModBtndiv{
+  margin-left: 23px;
+}
+.ModBtnl {
+  font-family: "Share Tech", sans-serif;
+  font-size: 18px;
+}
 .ModBtn:hover {
-
-    box-shadow: 1px 1px 25px #2ecc36 inset;
-    color: #2ecc36;
-  
+  box-shadow: 1px 1px 25px #2ecc36 inset;
+  color: #2ecc36;
 }
 .stockBtn {
-    border-radius: 0.5rem;
+  border-radius: 0.5rem;
   background-color: rgb(0, 0, 0);
   color: #2ecc36;
   font-family: "Share Tech", sans-serif;
@@ -66,15 +70,14 @@
   width: 100px;
   margin-top: 17px;
   margin-left: 25px;
- 
 }
 .stockBtn:hover {
   color: rgb(63, 220, 231);
-  box-shadow: 1px 1px 25px rgb(63, 220, 231)inset;
+  box-shadow: 1px 1px 25px rgb(63, 220, 231) inset;
 }
 
 .addbtn {
-  color:#2ecc36;
+  color: #2ecc36;
   font-weight: 700;
   height: 60px;
   width: 300px;
@@ -82,10 +85,8 @@
   border-color: rgba(240, 248, 255, 0);
   font-size: 20px;
   border-radius: 0.5rem;
-  
 }
-.addbtn:hover{
- 
+.addbtn:hover {
   box-shadow: 1px 1px 20px #2ecc36;
 }
 .img {
@@ -96,22 +97,21 @@
 }
 
 .stockinput {
-    position: relative;
-    bottom: 12px;
-    left: 12px;
-    border-radius: 0.5rem;
+  position: relative;
+  bottom: 12px;
+  left: 12px;
+  border-radius: 0.5rem;
   height: 25px;
   width: 55px;
 }
-.stockinput:focus{
-    box-shadow: 1px 1px 10px rgb(63, 220, 231)inset;
-    border: 2px solid black;
+.stockinput:focus {
+  box-shadow: 1px 1px 10px rgb(63, 220, 231) inset;
+  border: 2px solid black;
 }
-.stockinput:active{
-    box-shadow: 1px 1px 10px rgb(63, 220, 231)inset;
-    border: 2px solid black;
+.stockinput:active {
+  box-shadow: 1px 1px 10px rgb(63, 220, 231) inset;
+  border: 2px solid black;
 }
-
 
 .stockdiv {
   display: flex;
@@ -121,6 +121,22 @@
   color: black;
 }
 
-.secondaryBar{
-    margin: 2rem;
+.secondaryBar {
+  margin: 2rem;
+}
+
+@media only screen and (max-width: 1500px) {
+    .card {
+        width: 1040px
+    }
+}
+@media only screen and (max-width: 1340px) {
+    .container {
+      margin: 0;
+      padding: 0;
+      background-color:transparent;
+      box-shadow: none;
+    }
+}
+@media only screen and (max-width: 1100px) {
 }

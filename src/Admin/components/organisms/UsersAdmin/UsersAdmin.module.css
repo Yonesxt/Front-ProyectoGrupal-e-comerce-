@@ -1,19 +1,20 @@
 .container{
-    margin-left: 100px;
-  margin-right: 100px;
-  margin-top: 25px;
-  background-color: #666666;
-  padding: 2rem;
-  box-shadow: 1px 1px 30px rgb(5, 5, 5);
-  border-radius: 0.5rem;
+    width: 850px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 25px;
+    background-color: #666666;
+    padding: 2rem;
+    box-shadow: 1px 1px 30px rgb(5, 5, 5);
+    border-radius: 0.5rem;
 }
 
 .card{
-    
-    
     display: grid;
-    grid-template-columns: 100px 100px 300px 200px 300px;
+    grid-template-columns: 100px 90px 200px 100px 250px;
     grid-auto-rows: auto;
+    align-items: center;
+    align-content: center;
     margin: 1rem;
     border-radius: 0.5rem;
     color: white;  
@@ -23,39 +24,31 @@
     height: 100px;
     overflow: hidden;
     text-overflow: ellipsis;
-   
-    
-    
 }
 .element{
     margin: 10px 5px 10px 5px;
 }
 
 .DelBtn{
-    margin-top: 20px;
     margin-left: 25px;
-  background-color: rgb(0, 0, 0);
-  border-radius: 0.5rem;
-  height: 50px;
-  width: 50px;
-  font-family: "Share Tech", sans-serif;  
-  color: #2ecc36;
+    background-color: rgb(0, 0, 0);
+    border-radius: 0.5rem;
+    height: 50px;
+    width: 50px;
+    font-family: "Share Tech", sans-serif;  
+    color: #2ecc36;
 }
 .DelBtn:hover{
     box-shadow: 1px 1px 25px red inset;
-  color: red;
+    color: red;
 }
 .DelIcon{
-    
-    margin-top: 20px;
-    margin-left: 25px;
     height: 50px;
-  width: 50px;
+    width: 50px;
 }
 .DelIconr{
     font-size: 40px;
     margin-left: 5px;
-    
     color: red;
 }
 .DelIconr:hover{
@@ -63,14 +56,12 @@
 }
 
 .ModBtn{
-    margin-top: 20px;
-    margin-left: 25px;
-  background-color: rgb(0, 0, 0);
-  border-radius: 0.5rem;
-  height: 50px;
-  width: 50px;
-  font-family: "Share Tech", sans-serif;  
-  color: #2ecc36;
+    background-color: rgb(0, 0, 0);
+    border-radius: 0.5rem;
+    height: 50px;
+    width: 50px;
+    font-family: "Share Tech", sans-serif;  
+    color: #2ecc36;
 }
 .ModBtn:hover{
     box-shadow: 1px 1px 25px #2ecc36 inset;
@@ -78,10 +69,10 @@
 }
 .ModIcon{
     
-    margin-top: 20px;
-    margin-left: 25px;
+    /* margin-top: 20px;
+    margin-left: 25px; */
     height: 50px;
-  width: 50px;
+    width: 50px;
 }
 .ModIconr{
     font-size: 40px;
@@ -95,8 +86,8 @@
 .cardinfo{
     display: grid;
     color: #2ecc36;
-    grid-template-columns: 170px 250px 100px ;
-    margin: 0 225px 25px 338px;
+    grid-template-columns: 113px 190px 100px ;
+    margin: 0 189px 25px 300px;
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.514);
     font-family: "Share Tech", sans-serif;  
 }
@@ -123,4 +114,30 @@
     font-family: "Share Tech", sans-serif;  
 
 
+}
+
+@media only screen and (max-width: 1100px) {
+    .container{
+        width: 80vw;
+        padding: 0;
+        box-shadow: none;
+        background-color: transparent;
+    }
+    .card {
+        margin: 0;
+        font-size: 14px;
+        grid-template-columns: 12vw 10vw 20vw 12vw 20vw;
+    }
+    .card button {
+        width: 2rem;
+        height: 2rem;
+    }
+    .ModIconr {
+        width: 2rem;
+        height: 2rem;
+    }
+    .cardinfo{
+        grid-template-columns: 18vw 18vw 100px ;
+        margin-left: 25vw
+    }
 }

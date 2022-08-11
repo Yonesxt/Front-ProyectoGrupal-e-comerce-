@@ -6,8 +6,9 @@ export const themes = extendTheme({
     colors: {
       brand: {
         green: "#01f603",
+        greenYellow: '#adff2f',
         darkGreen: "#00b800",
-        gray: "#464646",
+        gray: "rgb(26, 26, 26);",
         lightGray: "#dcdcdc",
         purple: "rgb(212, 0, 255)"
       },

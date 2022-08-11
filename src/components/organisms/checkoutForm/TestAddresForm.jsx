@@ -4,7 +4,7 @@ import card from '../../../assets/card_img.png'
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { changeProfile } from "../../../redux/actions";
-import swal from 'sweetalert';
+import swal2 from 'sweetalert2';
 
 
 const TestAddresForm = () => {
@@ -30,15 +30,12 @@ const TestAddresForm = () => {
     function handleConfirmar(e) {
         e.preventDefault()
         if (!user.address || !user.postalCode) {
-            return swal({
-                title: "Es necesaria la direccion y codigo postal",
-                input: "text",
-                showCancelButton: true,
-                confirmButtonText: "Guardar",
-                cancelButtonText: "Cancelar",
-                buttons: {
-                    cancel: 'ok'
-                }
+            swal2.fire({
+                position: 'center',
+                icon: 'warning',
+                title: 'Es necesaria la direccion y el codigo postal',
+                showConfirmButton: false,
+                timer: 1500
             })
         } else {
             dispatch(changeProfile(userLoged.id, user))
@@ -50,26 +47,20 @@ const TestAddresForm = () => {
     function handleSubmit(e) {
         e.preventDefault()
         if (!user.address || !user.postalCode) {
-            swal({
-                title: "Es necesaria la direccion y codigo postal",
-                input: "text",
-                showCancelButton: true,
-                confirmButtonText: "Guardar",
-                cancelButtonText: "Cancelar",
-                buttons: {
-                    cancel: 'ok'
-                }
+            swal2.fire({
+                position: 'center',
+                icon: 'warning',
+                title: 'Es necesaria la direccion y el codigo postal',
+                showConfirmButton: false,
+                timer: 1500
             })
         } else {
-            swal({
-                title: "A un solo paso de culminar tu compra",
-                input: "text",
-                showCancelButton: true,
-                confirmButtonText: "Guardar",
-                cancelButtonText: "Cancelar",
-                buttons: {
-                    cancel: 'ok'
-                }
+            swal2.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Con solo un paso terminas tu compra',
+                showConfirmButton: false,
+                timer: 1500
             })
             dispatch(changeProfile(userLoged.id, user))
             setTimeout(() => navigate('/TestCheckout'), 2000)

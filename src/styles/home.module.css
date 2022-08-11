@@ -1,0 +1,4 @@
+.homeCont {
+    display: flex;
+    flex-direction: column;
+}
