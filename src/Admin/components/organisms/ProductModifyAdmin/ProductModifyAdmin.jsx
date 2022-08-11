@@ -65,7 +65,6 @@ export default function CreateForm() {
     description: selectedProduct[0].description,
   });
 
-  console.log("this", update)
   // crea un set de brands para el select 
   const setBrand = [];
   products.map((e) => setBrand.push(e.brand));
@@ -74,8 +73,6 @@ export default function CreateForm() {
 
   products.map((e) => category.push(e.Categories[0]?.name))
   let setCat = [...new Set(category)]
-  console.log("setcat", setCat)
-
   const handleInputChange = function (e) {
 
     setProduct({

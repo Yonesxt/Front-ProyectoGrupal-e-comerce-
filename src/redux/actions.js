@@ -1,5 +1,5 @@
 import axios from 'axios';
-import swal from 'sweetalert';
+import swal2 from 'sweetalert2';
 
 export const GET_PRODUCTS = 'GET_PRODUCTS'
 export const GET_PRODUCT_BY_NAME = 'GET_PRODUCT_BY_NAME'
@@ -109,7 +109,7 @@ export function getUserByEmail(email) {
 }
 export function getAllByidUser(id) {
     return async function (dispatch) {
-        const json = await axios(`https://calm-dusk-93190.herokuapp.com/api/orders/` , {id})
+        const json = await axios(`https://calm-dusk-93190.herokuapp.com/api/orders/`, { id })
         const data = json.data
         return dispatch({
             type: GET_ALL_USERS_ORDER,
@@ -136,15 +136,12 @@ export function getFilters(category) {
             return dispatch({ type: GET_FILTERS, payload: data })
         }
         catch (error) {
-            return swal({
-                title: "No existen resultados para este filtro.",
-                input: "text",
-                showCancelButton: true,
-                confirmButtonText: "Guardar",
-                cancelButtonText: "Cancelar",
-                buttons: {
-                    cancel: 'ok'
-                }
+            return swal2.fire({
+                position: 'center',
+                icon: 'warning',
+                title: 'No hay filtros para este producto',
+                showConfirmButton: false,
+                timer: 1500
             })
         }
     }
@@ -161,7 +158,7 @@ export function banUser(body) {
 }
 export function updateProduct(id, update) {
     return async function (dispatch) {
-        const { data } = await axios.put('https://calm-dusk-93190.herokuapp.com/api/products/', ({id, update}))
+        const { data } = await axios.put('https://calm-dusk-93190.herokuapp.com/api/products/', ({ id, update }))
         return dispatch({
             type: UPDATE_PRODUCT,
             payload: data
@@ -170,7 +167,7 @@ export function updateProduct(id, update) {
 }
 export function changeRole(id) {
     return async function (dispatch) {
-        const { data } = await axios.put('https://calm-dusk-93190.herokuapp.com/api/users/role/' , (id) )
+        const { data } = await axios.put('https://calm-dusk-93190.herokuapp.com/api/users/role/', (id))
         return dispatch({
             type: UPDATE_ROL,
             payload: data
@@ -179,7 +176,7 @@ export function changeRole(id) {
 }
 export function updateStock(id, stock) {
     return async function (dispatch) {
-        const { data } = await axios.put('https://calm-dusk-93190.herokuapp.com/api/products/stock', ({id, stock}))
+        const { data } = await axios.put('https://calm-dusk-93190.herokuapp.com/api/products/stock', ({ id, stock }))
         return dispatch({
             type: UPDATE_STOCK,
             payload: data
@@ -188,7 +185,7 @@ export function updateStock(id, stock) {
 }
 export function deleteProduct(id) {
     return async function (dispatch) {
-        const { data } = await axios.put('https://calm-dusk-93190.herokuapp.com/api/product/'  + id )
+        const { data } = await axios.put('https://calm-dusk-93190.herokuapp.com/api/product/' + id)
         return dispatch({
             type: DELETE_PRODUCT,
             payload: data
@@ -263,10 +260,10 @@ export function getMsgCart(payload) {
 }
 ///////////////////////////////////   POSTS     ///////////////////////////////////////////
 
-export function token(tok, user) { 
+export function token(tok, user) {
     return async function (dispatch) {
-        
-        const { data } = await axios.post('https://calm-dusk-93190.herokuapp.com/api/profile',user,
+
+        const { data } = await axios.post('https://calm-dusk-93190.herokuapp.com/api/profile', user,
             {
                 headers: {
                     'Authorization': `Bearer ${tok}`
@@ -352,10 +349,9 @@ export function createProduct(payload) {
     }
 }
 
-export function favoritePost(idProducts,idUser) {
+export function favoritePost(idProducts, idUser) {
     return async function (dispatch) {
-        console.log(idProducts,idUser)
-        const json = await axios.post(`https://calm-dusk-93190.herokuapp.com/api/favorite`, {idProducts,idUser})
+        const json = await axios.post(`https://calm-dusk-93190.herokuapp.com/api/favorite`, { idProducts, idUser })
         const data = await json.data
         return dispatch({
             type: POST_FAVORITE,
@@ -363,10 +359,9 @@ export function favoritePost(idProducts,idUser) {
         })
     }
 }
-export function deleteFavorite(idProducts,idUser) {
+export function deleteFavorite(idProducts, idUser) {
     return async function (dispatch) {
-        console.log(idProducts,idUser)
-        const json = await axios.delete(`https://calm-dusk-93190.herokuapp.com/api/favorite`, { data: { idProducts,idUser } })
+        const json = await axios.delete(`https://calm-dusk-93190.herokuapp.com/api/favorite`, { data: { idProducts, idUser } })
         const data = await json.data
         return dispatch({
             type: DELETE_FAVORITE,
@@ -378,7 +373,7 @@ export function deleteFavorite(idProducts,idUser) {
 export function postOrder(id, products, shipmentAddress, postalCode) {
     return async function (dispatch) {
         // console.log(products,idUser)
-        const {data} = await axios.post(`https://calm-dusk-93190.herokuapp.com/api/orders`,{UserId: id, products, shipmentAddress, postalCode})
+        const { data } = await axios.post(`https://calm-dusk-93190.herokuapp.com/api/orders`, { UserId: id, products, shipmentAddress, postalCode })
         return dispatch({
             type: POST_ORDERS,
             payload: data
@@ -391,7 +386,8 @@ export function postOrder(id, products, shipmentAddress, postalCode) {
 export function changeProfile(id, user) {
     return async function (dispatch) {
         const { data } = await axios.put(`https://calm-dusk-93190.herokuapp.com/api/users/edit/${id}`, user);
-        console.log('aqui en action para el put',user)
+        // console.log("🚀 ~ file: actions.js ~ line 394 ~ data", data)
+        // console.log('aqui en action para el put', user)
         // return dispatch({
         //     type: TOKEN,
         //     payload: user

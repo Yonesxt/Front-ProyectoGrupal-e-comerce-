@@ -11,19 +11,12 @@ export default function Footer() {
 
     const footer = [
         {
-            to: '/aboutus',
-            name: 'Compañia',
-        },
-        {
             to: '/faq',
             name: 'FAQ',
         },
         {
             to: '/returns',
             name: 'Devoluciones',
-        }, {
-            to: '/aboutus',
-            name: 'Legal',
         },
         {
             to: '/termsandconditions',
@@ -57,12 +50,12 @@ export default function Footer() {
                         Contactanos via:
                     </div>
                     <a href='mailto:info@hardwere.com' target='_blank' rel='noopener' className={style.texttitle2}>
-                        Mail
+                        WhatsApp
                     </a>
 
-                    <a href="tel:+05890000111" className={style.texttitle2}>+541137699590</a>
+                    <a href="tel:+05890000111" className={style.texttitle2}>+57 3004077114</a>
 
-                    <Link to='/aboutus' className={style.textTitleFooter}>
+                    <Link to='/aboutus' className={style.textTitleFooter3}>
                         Sobre Nosotros
                     </Link>
 
@@ -92,7 +85,7 @@ export default function Footer() {
                 </div>
 
                 <p className={style.textTitleFooterinfoSize}>
-                    Al subscribirte a NewHard <br></br>
+                    Al subscribirte a Unknown Coder <br></br>
                     aceptas recibir promociones <br></br>
                     y mensajes personalizados<br></br>
                     automatizados via e-mail</p>

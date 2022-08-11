@@ -23,7 +23,7 @@ export default function TermsOfUse() {
             </p>
             <br />
             <p className={styles.aboutText}>
-                NewHard.com y todos los encabezados de página, gráficos personalizados e íconos de botones son marcas de servicio, marcas registradas <br />
+                UnknownCoder.com y todos los encabezados de página, gráficos personalizados e íconos de botones son marcas de servicio, marcas registradas <br />
                 Todas las demás marcas comerciales, nombres de productos y nombres de empresas o logotipos citados en este documento son propiedad de sus <br />
                 respectivos dueños.<br />
             </p>

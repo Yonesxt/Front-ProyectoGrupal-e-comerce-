@@ -19,15 +19,15 @@
     flex-direction: column;
 }
 
-.textTitleFooter2:hover{
-    text-decoration:underline;
-  }
+.textTitleFooter2:hover {
+    text-decoration: underline;
+}
 
-  a.textTitleFooter2.active {
+a.textTitleFooter2.active {
     background-color: transparent;
 }
 
-.iconsSize{
+.iconsSize {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -35,18 +35,21 @@
     font-size: 20px;
     color: #d3d3d3;
 }
+
 .contactUs {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
+
 .inputSubmit {
     display: flex;
     flex-direction: row;
     align-items: center;
     height: 35px;
 }
-.inputBox{
+
+.inputBox {
     background-color: #333333;
     border-radius: 5px;
     padding: 3px 7px;
@@ -54,7 +57,8 @@
     font-family: 'Share Tech', sans-serif;
     color: #d3d3d3;
 }
-.inputbtn{
+
+.inputbtn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -66,11 +70,11 @@
     border-radius: 4px;
     background-color: greenyellow;
     color: #000000;
-} 
+}
 
-.textTitleFooter2:hover{
-    text-decoration:underline;
-  }
+.textTitleFooter2:hover {
+    text-decoration: underline;
+}
 
 a.textTitleFooter2.active {
     background-color: transparent;
@@ -80,6 +84,7 @@ a.textTitleFooter2.active {
     .contact {
         display: none;
     }
+
     .bgfooter {
         font-size: 13px !important;
     }
@@ -94,7 +99,13 @@ a.textTitleFooter2.active {
         align-items: start;
         font-size: 16px !important;
     }
+
     .divAlign {
         margin-bottom: 50px;
     }
+}
+
+.textTitleFooter3 {
+    font-size: 1.5rem;
+    color: #01F603;
 }

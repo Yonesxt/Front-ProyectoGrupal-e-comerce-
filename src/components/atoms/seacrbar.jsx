@@ -3,13 +3,14 @@ import { useState } from 'react';
 import search from '../../assets/search.jpg'
 import { getProductByName } from '../../redux/actions';
 import style from '../../styles/searchbar.module.css'
-import {connect} from 'react-redux'
+import {connect } from 'react-redux'
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 export function SearchBar ({searchedProducts, getProductByName}) {
     // eslint-disable-next-line
+
     const [products, setProducts] = useState('')
     const [value, setValue] = useState('')
 
@@ -23,7 +24,7 @@ export function SearchBar ({searchedProducts, getProductByName}) {
     function handleClick (e) {
         e.preventDefault()
         setValue('')
-        navigate(`/allProducts?name=${value}`)
+        navigate(`allProducts?name=${value}`)
     }
 
     return (
@@ -33,8 +34,8 @@ export function SearchBar ({searchedProducts, getProductByName}) {
                 <button type='submit'><img src={search} alt='search-button'/></button>
             </form>
             <div className={style.productsBox}>
-                {value && searchedProducts.map(p => { return (
-                    <Link to={`/details/${p.id}`}>
+                {value && searchedProducts.map((p, index) => { return (
+                    <Link to={`/details/${p.id}`} key={index}>
                         <li onClick={() => setValue('')}>{p.name}</li>
                     </Link>
                 )})}

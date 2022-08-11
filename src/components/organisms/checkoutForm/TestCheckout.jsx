@@ -53,7 +53,6 @@ const CheckoutForm = () => {
                     id,
                     amount: totalPrice
                 })
-                console.log(data.msg)
 
                 dispatch(getMsgCart(data.msg))
 
@@ -64,9 +63,9 @@ const CheckoutForm = () => {
                     swal2.fire({
                         position: 'center',
                         icon: 'success',
-                        title: 'Compra exitosa',
+                        title: 'Compra exitosa, recibiras un e-mail con detalles de tu compra',
                         showConfirmButton: false,
-                        timer: 1500
+                        timer: 2000
                     })
                     setTimeout(() => navigate('/'), 2000)
                     window.localStorage.clear();

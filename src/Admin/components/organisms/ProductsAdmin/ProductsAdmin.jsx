@@ -46,7 +46,6 @@ function ProductsAdmin() {
   }
 
   function deleteHandler(e) {
-    console.log(e.id);
     swal({
       title: "Are you sure?",
       text: "Once hidden, you will not be able to recover this product!",

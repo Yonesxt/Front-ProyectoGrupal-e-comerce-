@@ -8,7 +8,6 @@ import swal2 from 'sweetalert2';
 
 const Fav = (props) => {
   const Favorites = useSelector((state) => state.UserFavs);
-  console.log(Favorites);
   const isFav = Favorites[0]?.Products.find(
     (e) => e.Favorites.ProductId === props.id
   );

@@ -16,7 +16,6 @@ function ReviewsAdmin() {
   const allreviews = useSelector((state) => state.allComments)
 
   function deleteHandler(e) {
-    console.log(e.id)
     swal({
       title: "Are you sure?",
       text: "Once deleted, you can`t recover the review!",

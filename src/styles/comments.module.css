@@ -87,6 +87,7 @@
 .btnDelete {
     display: flex;
     margin-top: 20px;
+    padding: 10px 55px;
     margin-left: 30px;
     margin-right: 25px;
     background-color: rgb(0, 0, 0);
@@ -94,7 +95,14 @@
     height: 50px;
     width: 50px;
     font-family: "Share Tech", sans-serif;
+    transition: 0.8s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
+.btnDelete:hover {
+    letter-spacing: 3px;
+    padding: 10px 65px;
 }
 
 .NoComments {

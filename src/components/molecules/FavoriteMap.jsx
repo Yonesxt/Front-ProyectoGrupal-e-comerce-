@@ -15,7 +15,6 @@ export default function FavoriteMap() {
   useEffect(() => {
     Object.keys(userL).length > 0 && dispatch(getUsersFavorite(userL.id));
   }, [itemToDelete]);
-  console.log("🚀 ~ file: FavoriteMap.jsx ~ line 18 ~ FavoriteMap ~ itemToDelete", itemToDelete)
 
   const mapFavorites = UserFavorite[0]?.Products || [];
   if (!numberOfFavorites) return <p>Favoritos Vacio</p>;

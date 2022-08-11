@@ -14,7 +14,6 @@ useEffect(() => {
 
     const allorder = useSelector((state)=> state.allOrders)
     const order = allorder.filter((e)=>(e.id===id))
-    console.log(order)
 
     return(
         <div className={style.container}>
