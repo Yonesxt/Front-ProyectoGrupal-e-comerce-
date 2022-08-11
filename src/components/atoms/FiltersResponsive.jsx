@@ -51,7 +51,7 @@ export default function FiltersResponsive () {
         e.preventDefault(e);
         if (input.categorie.includes(e.target.value)) {
             return
-        } else {
+        } else if(e.target.value) {
             setInput({
                 ...input,
                 categorie: [...input.categorie, e.target.value]
@@ -63,7 +63,7 @@ export default function FiltersResponsive () {
         e.preventDefault(e);
         if (input.brand.includes(e.target.value)) {
             return
-        } else {
+        } else if(e.target.value) {
             setInput({
                 ...input,
                 brand: [...input.brand, e.target.value]
@@ -120,7 +120,7 @@ export default function FiltersResponsive () {
 
             {/* ----------- filtro de categorias---------- */}
                 <select className={style.select} onChange={(e) => handleCategory(e)}>
-                    <option value=""  default="true" disabled>Categorias</option>
+                    <option value=""   disabled>Categorias</option>
                     {
                         allCategories && allCategories.map((item, index) => (
                             <option key={index} value={item} >
@@ -134,7 +134,7 @@ export default function FiltersResponsive () {
             {/* ----------- filtro de marcas ---------- */}
 
             <select className={style.select} onChange={(e) => handleOrderBrand(e)} >
-                <option value="" default="true" disabled>Marcas</option>
+                <option value=""  disabled>Marcas</option>
                 {
                     brands && brands.map((item, index) => (
                         <option key={index} value={item}>

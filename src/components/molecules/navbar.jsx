@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import ToggleMenu from '../atoms/toggleMenu.jsx'
-// import Usermenu from '../atoms/UserMenu.jsx'
 import logo from '../../assets/coder2.png'
 import SearchBar from '../atoms/seacrbar.jsx'
 import { SidebarOptions } from '../atoms/sidebaroptions.jsx'
@@ -27,7 +26,7 @@ export default function Navbar() {
                 Object.keys(userLoged).length > 0 && dispatch(getUsersFavorite(userLoged.id));
             }
         }
-    }, [isLoading, isAuthenticated, Object.keys(userLoged).length]) //eslint-disable-line react-hooks/exhaustive-deps
+    }, [isLoading, isAuthenticated, Object.keys(userLoged).length])
 
 
     return (
@@ -39,10 +38,9 @@ export default function Navbar() {
                 <div className={style.searchbar}>
                     <SearchBar />
                 </div>
-                {/* <Switch colorScheme='blackAlpha' size='lg'/> */}
             </div>
             <div className={style.sidebarToggle} id={userLoged.id}>
-                <SidebarOptions />
+                <SidebarOptions  id={userLoged.id} isAdmin={userLoged.isAdmin}/>
                 <ToggleMenu />
             </div>
         </div>

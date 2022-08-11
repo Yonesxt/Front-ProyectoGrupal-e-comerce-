@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import SlidePopularProducts from '../molecules/SlidePopularProducts';
 import SlideBestNotebooks from '../molecules/SlideBestNotebooks';
 import { Slider } from '../molecules/slider';

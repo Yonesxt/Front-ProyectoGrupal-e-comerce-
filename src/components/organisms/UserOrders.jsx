@@ -22,7 +22,7 @@ const UserOrders = () => {
   
   useEffect(() => {
     dispatch(getAllByidUser(id))
-  }, []) //eslint-disable-line react-hooks/exhaustive-deps
+  }, [dispatch, id]) 
 
   const allOrders = useSelector((state) => state.UserOrders)
 
@@ -118,9 +118,9 @@ const UserOrders = () => {
                 <div>
                   <h4 className={style.firstInfo}> {order.date.slice(0, 10)} </h4>
                 </div>
-                {order.Products.map((item) => {
+                {order.Products.map((item, index) => {
                   return (
-                    <div className={style.productDiv}>
+                    <div className={style.productDiv} key={index}>
                       <div className={style.divImg}>
                         <img src={item.image} alt="item" />
                       </div>
@@ -155,9 +155,9 @@ const UserOrders = () => {
                               <fieldset>
                                 <div className={style.numbers}>
                                   {
-                                    optionsRating.map(({ value }) => {
+                                    optionsRating.map(({ value }, index) => {
                                       return (
-                                        <div >
+                                        <div key={index}>
                                           <div>
                                             <input className={style.numberInput} type="radio" id={value} name="rating" value={value} onChange={e => handleRating(e)}
                                             />

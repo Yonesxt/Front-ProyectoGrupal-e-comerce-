@@ -7,8 +7,8 @@ import CardProducts from "../atoms/cardProducts";
 import Filters from "../atoms/Filters";
 import FiltersResponsive from "../atoms/FiltersResponsive";
 
-export default function AllProducts() {
 
+export default function AllProducts() {
   const dispatch = useDispatch()
   const pages = useSelector((state) => state.pages)
   const products = useSelector((state) => state.data)

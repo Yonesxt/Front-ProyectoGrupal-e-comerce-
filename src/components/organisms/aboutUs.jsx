@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import rogelio from '../../assets/roge.jpeg';
+import rogelio from '../../assets/rogelio.jpeg';
 import bayron from '../../assets/bayron.jpg';
 import cris from '../../assets/cristina.jpeg';
 import martin from '../../assets/martincho.jpeg';
@@ -108,8 +108,8 @@ export default function AboutUs() {
                         <h3 className={style.h3}>Gaston Gonzalez<br /><span className={style.span}>FullStack Developer</span></h3>
                         <ul className={style.sci}>
                             <li className={style.li}><a href="https://github.com/Vanhellsiin" className={style.a} target="_blank" rel="noreferrer"><i className="fa-brands fa-github"></i></a></li>
-                            <li className={style.li}><a href="#" className={style.a} target="_blank" rel="noreferrer"><i className="fa-brands fa-linkedin"></i></a></li>
-                            <li className={style.li}><a href="#" className={style.a} target="_blank" rel="noreferrer"><i className="fa-brands fa-instagram"></i></a></li>
+                            <li className={style.li}><a href="https://www.linkedin.com/in/ggimenez-tag/" className={style.a} target="_blank" rel="noreferrer"><i className="fa-brands fa-linkedin"></i></a></li>
+                            <li className={style.li}><a href="https://www.instagram.com/gas.gimenez/" className={style.a} target="_blank" rel="noreferrer"><i className="fa-brands fa-instagram"></i></a></li>
                         </ul>
                     </div>
                 </div>

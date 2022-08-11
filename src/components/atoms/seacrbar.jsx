@@ -1,19 +1,17 @@
 import React from 'react';
 import { useState } from 'react';
 import search from '../../assets/search.jpg'
-import { getProductByName } from '../../redux/actions';
+import { getProductByName, paginacion } from '../../redux/actions';
 import style from '../../styles/searchbar.module.css'
 import {connect } from 'react-redux'
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-export function SearchBar ({searchedProducts, getProductByName}) {
-    // eslint-disable-next-line
+export function SearchBar ({searchedProducts, getProductByName, paginacion}) {
 
     const [products, setProducts] = useState('')
     const [value, setValue] = useState('')
-
     let navigate = useNavigate()
 
     useEffect(() => {
@@ -24,7 +22,8 @@ export function SearchBar ({searchedProducts, getProductByName}) {
     function handleClick (e) {
         e.preventDefault()
         setValue('')
-        navigate(`allProducts?name=${value}`)
+        paginacion(products)
+        navigate(`/allProducts?name=${value}`)
     }
 
     return (
@@ -46,13 +45,15 @@ export function SearchBar ({searchedProducts, getProductByName}) {
 
 export const mapStateToProps = (state) => {
     return {
+        productsToRender: state.productsToRender,
         searchedProducts: state.searchedProducts
     }
 }
 
 export const mapDispatchToProps = (dispatch) => {
     return {
-        getProductByName: (name) => dispatch(getProductByName(name))
+        getProductByName: (name) => dispatch(getProductByName(name)),
+        paginacion: (name) => dispatch(paginacion(name))
     }
 }
 

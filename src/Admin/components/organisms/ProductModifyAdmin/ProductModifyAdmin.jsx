@@ -73,6 +73,7 @@ export default function CreateForm() {
 
   products.map((e) => category.push(e.Categories[0]?.name))
   let setCat = [...new Set(category)]
+
   const handleInputChange = function (e) {
 
     setProduct({

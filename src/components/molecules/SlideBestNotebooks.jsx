@@ -34,6 +34,8 @@ function SlideBestNotebooks() {
     dispatch(getFilters(category))
   }, [dispatch])
 
+  const innerWidth = window.innerWidth > 800? 5 : 2
+
   return (
     <div className={style.slideContainer}>
       <h3 className={style.title}> Las Mejores Computadoras </h3>
@@ -41,12 +43,9 @@ function SlideBestNotebooks() {
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={80}
-          slidesPerView={5}
+          slidesPerView={innerWidth}
           navigation
-        // pagination={{ clickable: true }}
-        // scrollbar={{ draggable: true }}
-        // onSlideChange={() => console.log('slide change')}
-        // onSwiper={(swiper) => console.log(swiper)}
+    
         >
           {
             infoBestNotebooks ? productsToSee.map(({ id, image, name, price, rating }) => {

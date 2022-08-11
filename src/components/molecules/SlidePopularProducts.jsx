@@ -26,6 +26,8 @@ function SlidePopularProducts() {
   })
   const productsToSee = productsXRating.slice(0, 10)
 
+  const innerWidth = window.innerWidth < 800? 2 : 5
+
   return (
     <div className={style.slideContainer}>
       <h3 className={style.title}> Productos Populares</h3>
@@ -33,12 +35,9 @@ function SlidePopularProducts() {
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={80}
-          slidesPerView={5}
+          slidesPerView={innerWidth}
           navigation
-        // pagination={{ clickable: true }}
-        // scrollbar={{ draggable: true }}
-        // onSlideChange={() => console.log('slide change')}
-        // onSwiper={(swiper) => console.log(swiper)}
+       
         >
           {
             infoData ? productsToSee.map(({ id, image, name, price, rating }) => {
