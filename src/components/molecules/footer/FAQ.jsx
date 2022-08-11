@@ -20,15 +20,10 @@ export default function Faq (){
         </p>
         <br/>
         <p className={styles.aboutText}>
-        Si no recibiste un artículo que pediste, o si recibiste un producto diferente <br/>
-        del que ordenaste, contáctenos y nosotros nos encargamos del resto. <br/>
+        Este e-commerce es ficticio con productos ficticio <br/>
+        no se pueden realizar compras en esta pagina <br/>
         </p>
         <br/>
-        <p className={styles.aboutText}>
-        Las compras realizadas en nuestra web pueden ser devueltas por cualquier motivo hasta 30 días después de la entrega. <br/>
-        Lleve el artículo y un recibo válido a cualquier tienda, o comuníquese con <br/>
-        info@newhard.com para iniciar el proceso de devolucion.
-        </p>
         <br/>
         <p className={styles.aboutText}>
         Nuestro tiempo de procesamiento normal es de 24 a 48 horas para los pedidos realizados durante los días hábiles  <br/>
@@ -40,9 +35,9 @@ export default function Faq (){
         </p>
         <br/>
         <p className={styles.aboutText}>
-        Las compras realizadas en nuestro sitio web pueden devolverse hasta 30 días después de la entrega confirmada para obtener un reembolso <br/>
-        en la forma de pago original. <br/>
-        Lo sentimos, no podemos reembolsar el costo de envío. Informe sobre productos faltantes, dañados o defectuosos <br/>
+        Las compras realizadas en nuestro sitio web son ficticias <br/>
+         la forma de pago es ficticia. <br/>
+        Lo sentimos, no podemos reembolsar . Informe sobre productos faltantes, dañados o defectuosos <br/>
         dentro de los 30 días posteriores a la entrega, y reemplazaremos los productos dañados o defectuosos sin cargo adicional.<br/>
         </p>
         <div className={styles.marginDiv}>

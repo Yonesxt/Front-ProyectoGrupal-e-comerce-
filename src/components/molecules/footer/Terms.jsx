@@ -32,7 +32,7 @@ export default function Terms() {
                 con nosotros electrónicamente. Usted acepta que podemos comunicarnos electrónicamente, sujeto a las leyes locales de privacidad y antispam,  <br />
                 y que tales comunicaciones, así como avisos, divulgaciones, acuerdos y otras comunicaciones que proporcionamos <br />
                 electrónicamente, son equivalentes a las comunicaciones por escrito y tendrán la misma fuerza y ​​efecto que   <br />
-                si fueran por escrito y firmados por el remitente de la comunicación. <br />
+                si fueran por escrito y firmados por el remitente de la comunicación. No podemos devolver ninguna compra realizada en esta pagina web ya que todos los productos son ficticios <br />
             </p>
             <br />
             <div className={styles.marginDiv}>

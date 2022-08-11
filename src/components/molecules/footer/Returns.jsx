@@ -11,7 +11,7 @@ export default function Returns() {
 
     return (
         <>
-            <div className={styles.aboutTitle} >Devoluciones</div>
+            <div className={styles.aboutTitle} >Devoluciones(no se puede realizar compras en esta pag web)</div>
             <p className={styles.aboutText}>
                 Estamos comprometidos a proporcionar productos de calidad a nuestros clientes. Si recibe los productos <br />
                 que no cumplan con sus expectativas, devuelva los productos usados ​​en buen estado dentro de los 30 días posteriores a la recepción. <br />
