@@ -14,12 +14,9 @@ export default function TermsOfUse() {
 
             <div className={styles.aboutTitle} >Termino de Uso</div>
             <p className={styles.aboutText}>
-                Todo el diseño, texto, gráficos, logotipos, iconos de botones, imágenes, clips de audio y video, la selección y  <br />
-                disposición de los mismos, y todo el software en el Sitio es Copyright (c) NewHard <br />
                 RESERVADOS TODOS LOS DERECHOS. La compilación (es decir, la recopilación, arreglo y montaje) de todos los <br />
-                El contenido de los Sitios es propiedad exclusiva de Hard y está protegido por <br />
-                leyes de derechos de autor. Todo el software utilizado en los Sitios es propiedad de Hard o de sus proveedores de software <br />
-                está protegido por las leyes de derechos de autor de EE. UU. e internacionales.<br />
+                El contenido de los Sitios es propiedad exclusiva y está protegido por <br />
+                leyes de derechos de autor. <br />
             </p>
             <br />
             <p className={styles.aboutText}>
