@@ -40,7 +40,7 @@ export const GET_ALL_COMMENTS = `GET_ALL_COMMENTS`
 export const DELETE_FAVORITE = `DELETE_FAVORITE`
 export const GET_USER_FAVORITES = `GET_USER_FAVORITES`
 
-export const URL_BACK = `https://calm-dusk-93190.herokuapp.com/api`
+export const URL_BACK = `https://e-commerce-back-otck.onrender.com/api`
 
 export function getProducts() {
     return async function (dispatch) {
